@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro"
 import Section from "../components/Section.astro"
+import Feature from "../components/Feature.astro";
 ---
 
 <Layout>
@@ -13,21 +14,43 @@ import Section from "../components/Section.astro"
 
   <Section title="Controla tu Negocio">
 
-    <div class="card card-feature text-center mb-3" style="width: 18rem;">
-      
-      <div class="card-img d-flex justify-content-center align-items-center"> <!-- Here I create a New Div for image with class name card_img -->
-        <i class="fa-solid fa-pen-paintbrush"></i>
+    <div class="container text-center">
+
+      <!-- Primera Fila -->
+      <div class="row justify-content-center">
+        <div class="col d-flex justify-content-center">
+          <Feature description="Agrega tu logo y tus datos para que salga en tus comprobantes" icon= "fa-solid fa-pen-paintbrush"> </Feature>
+        </div>
+        <div class="col d-flex justify-content-center ">
+          <Feature description="Obtén los datos de tus clientes solo con el número de documento" icon="fa-solid fa-user"></Feature>
+        </div>
+        <div class="col d-flex justify-content-center ">
+          <Feature description="Obtener reportes de los movimientos de tu negocio" icon="fa-solid fa-briefcase"></Feature>
+        </div>
       </div>
 
-      <div class="card-body">
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+      
+      <!-- Segunda Fila -->
+      <div class="row justify-content-center">
+        <div class="col d-flex justify-content-center">
+          <Feature description="Agrega tu logo y tus datos para que salga en tus comprobantes" icon= "fa-solid fa-pen-paintbrush"> </Feature>
+        </div>
+        <div class="col d-flex justify-content-center ">
+          <Feature description="Obtén los datos de tus clientes solo con el número de documento" icon="fa-solid fa-user"></Feature>
+        </div>
+        <div class="col d-flex justify-content-center ">
+          <Feature description="Obtener reportes de los movimientos de tu negocio" icon="fa-solid fa-briefcase"></Feature>
+        </div>
       </div>
+
+
+
+
     </div>
 
   </Section> 
   
   <Section title="Fortalece tu Negocio">
-
   </Section>
 
 
@@ -39,24 +62,6 @@ import Section from "../components/Section.astro"
 
 
 <style>
-  i{
-    padding: 1.2rem;
-    font-size: 3rem;
-    color: rgb(255, 255, 255);
-    object-fit: cover;
-  }
-
-
-.card-img {
-    width: 8rem;
-    height: 8rem;
-    overflow: hidden;
-    border-radius: 100%;
-    margin: -60px auto 0;
-    background-color: rgb(52, 163, 110);
-}
-
-
 
   /* Hero */
   .container-fluid{
@@ -76,17 +81,11 @@ import Section from "../components/Section.astro"
     padding: 0.8rem 2rem;
   }
 
-  .card-feature{
-    border: none;
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  /* Features */
+  .features{
+    margin-top: 0rem;
   }
 
-  .card-text{
-    padding: 0rem 1rem 1rem 1rem;
-  }
 
-  .card{
-    border-radius: 10px;
-  }
 
 </style>
