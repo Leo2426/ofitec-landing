@@ -1,0 +1,30 @@
+---
+interface Props{
+    title: string
+}
+const {title} = Astro.props
+---
+
+<section class="Section">
+    <div class="container d-flex flex-column align-items-center">
+      <h1 class="fw-bold text-center" >{title}</h1>
+      <hr>
+
+      <slot/>
+
+    </div>
+  </section>
+
+  <style>
+      .Section{
+        padding-top: 3rem;
+        background-color: rgb(238, 240, 238);
+        height: 100vh;
+      }
+      hr{
+        margin-top: 0.5rem;
+        border: 5px solid rgb(52, 163, 110);
+        width: 50%;
+        opacity: 100%;
+      }
+  </style>
