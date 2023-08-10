@@ -1,8 +1,14 @@
 ---
 interface Props{
     title: string
+    background_color?: string 
+    font_color?: string 
 }
-const {title} = Astro.props
+const background_color_default = "rgb(247 247 247)"
+const font_color_default = "black"
+
+const {title, background_color = background_color_default, font_color = font_color_default} = Astro.props
+
 ---
 
 <section class="Section">
@@ -15,16 +21,19 @@ const {title} = Astro.props
     </div>
   </section>
 
-  <style>
+
+  <style define:vars={{ background_color , font_color}}>
       .Section{
         padding-top: 3rem;
-        background-color: rgb(238, 240, 238);
-        height: 100vh;
+        background-color: var(--background_color);
+        color: var(--font_color);
       }
+
       hr{
         margin-top: 0.5rem;
         border: 5px solid rgb(52, 163, 110);
         width: 50%;
         opacity: 100%;
       }
+      
   </style>
