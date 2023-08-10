@@ -2,6 +2,8 @@
 import Layout from "../layouts/Layout.astro"
 import Section from "../components/Section.astro"
 import Feature from "../components/Feature.astro"
+
+export const back_color_secondary = "rgb(48 48 68)"
 ---
 
 <Layout>
@@ -50,7 +52,32 @@ import Feature from "../components/Feature.astro"
 
   </Section> 
   
-  <Section title="Fortalece tu Negocio" >
+  <Section title="Fortalece tu Negocio" background_color = {back_color_secondary} font_color="white" >
+    
+    <div class="container numeros-negocio">
+      <div class="row">
+        <div class="col col1 d-flex flex-column justify-content-center align-items-center">
+          <h1 class="fw-bold">500+</h1>
+          <p>Archivos generados</p>
+        </div>
+
+        <div class="col d-flex flex-column justify-content-center align-items-center">
+          <h1 class="fw-bold" >20+</h1>
+          <p>Empresas trabajando</p>
+        </div>
+
+        <div class="col d-flex flex-column justify-content-center align-items-center">
+          <h1 class="fw-bold">300+</h1>
+          <p>Comprobantes emitidos</p>
+        </div>      
+      
+        <div class="col  d-flex flex-column justify-content-center align-items-center">
+          <h1 class="fw-bold" >1000+</h1>
+          <p>Notas de venta</p>
+        </div>
+      </div>
+    </div>
+  
   </Section>
 
 
@@ -86,11 +113,9 @@ import Feature from "../components/Feature.astro"
     padding: 0.8rem 2rem;
   }
 
-  /* Features */
-  .features{
-    margin-top: 0rem;
+/* Fortalece tu negocio */
+  .numeros-negocio{
+    margin-top: 2rem;
   }
-
-
 
 </style>
