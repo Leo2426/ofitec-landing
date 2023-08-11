@@ -1,0 +1,22 @@
+---
+interface  Props{
+    background_image: string
+}
+const {background_image} = Astro.props
+const complete = "url(" + background_image + ")"
+---
+
+<div class="container-fluid hero d-flex flex-column justify-content-center">
+    <slot/>
+</div>
+
+<style define:vars= {{complete}}>
+    .hero{
+      height: 100vh;
+      background-image: var(--complete);
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-position: center;
+      background-size: cover;
+    }
+</style>

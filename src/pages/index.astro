@@ -2,17 +2,17 @@
 import Layout from "../layouts/Layout.astro"
 import Section from "../components/Section.astro"
 import Feature from "../components/Feature.astro"
+import Hero from "../components/Hero.astro"
 
 export const back_color_secondary = "rgb(48 48 68)"
 ---
 
 <Layout>
-  <div class="container-fluid d-flex flex-column justify-content-center">
+  
+  <Hero background_image="https://img.freepik.com/free-photo/group-people-working-out-business-plan-office_1303-15861.jpg?w=1480&t=st=1691689377~exp=1691689977~hmac=bf3748e27c5b58466719f87de48098aa9f25fd091ae7bec5fb9fabf04189d8e0">
     <h1 class="text-center titulo">Sistema de Facturación Electrónica</h1>
     <button type="button" class="btn-hero btn btn-success mx-auto">PROBAR SISTEMA GRATIS</button>
-  </div>
-
-
+  </Hero>
 
   <Section title="Controla tu Negocio">
 
@@ -56,22 +56,22 @@ export const back_color_secondary = "rgb(48 48 68)"
     
     <div class="container numeros-negocio">
       <div class="row">
-        <div class="col col1 d-flex flex-column justify-content-center align-items-center">
+        <div class="col col-md-6 d-flex flex-column justify-content-center align-items-center">
           <h1 class="fw-bold">500+</h1>
           <p>Archivos generados</p>
         </div>
 
-        <div class="col d-flex flex-column justify-content-center align-items-center">
+        <div class="col col-md-6 d-flex flex-column justify-content-center align-items-center">
           <h1 class="fw-bold" >20+</h1>
           <p>Empresas trabajando</p>
         </div>
 
-        <div class="col d-flex flex-column justify-content-center align-items-center">
+        <div class="col col-md-6 d-flex flex-column justify-content-center align-items-center">
           <h1 class="fw-bold">300+</h1>
           <p>Comprobantes emitidos</p>
         </div>      
       
-        <div class="col  d-flex flex-column justify-content-center align-items-center">
+        <div class="col col-md-6 d-flex flex-column justify-content-center align-items-center">
           <h1 class="fw-bold" >1000+</h1>
           <p>Notas de venta</p>
         </div>
@@ -81,10 +81,27 @@ export const back_color_secondary = "rgb(48 48 68)"
   </Section>
 
 
-  <div class="container">
-    <h1>Hola como estes</h1>
-  </div>
-
+  <Section title="Ellos ya confían en nosotros">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <img src="/favicon.svg" alt="" class="img-fluid">
+        </div>
+        <div class="col">
+          <img src="/favicon.svg" alt="" class="img-fluid">
+        </div>
+        <div class="col">
+          <img src="/favicon.svg" alt="" class="img-fluid">
+        </div>
+        <div class="col">
+          <img src="/favicon.svg" alt="" class="img-fluid">
+        </div>
+        <div class="col">
+          <img src="/favicon.svg" alt="" class="img-fluid">
+        </div>
+      </div>
+    </div>
+  </Section>
 
 </Layout>
 
@@ -96,13 +113,8 @@ export const back_color_secondary = "rgb(48 48 68)"
 <style>
 
   /* Hero */
-  .container-fluid{
-    height: 100vh;
-    background-color: rgb(7, 37, 60);
-  }
-
   .titulo{
-    color: aliceblue;
+    color: white;
     font-size: 5rem;
     font-family: 'Open Sans', sans-serif
   }
