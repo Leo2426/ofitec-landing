@@ -1,20 +1,26 @@
 ---
 interface Props{
     description: string;
-    icon: string;
+    icon?: string;
+    icon_local?: string;
+    islocal?: boolean;
 }
 
-const {description, icon} = Astro.props;
+const {description, icon, icon_local="", islocal} = Astro.props;
 ---
 <div class="card card-feature text-center mb-3" style="width: 18rem;">
       
     <div class="card-img d-flex justify-content-center align-items-center"> <!-- Here I create a New Div for image with class name card_img -->
-      <i class= {icon} ></i>
+      {islocal && <img src={icon_local} alt="icon" />}
+      {!islocal && <i class= {icon}></i> }
+
     </div>
 
     <div class="card-body">
       <p class="card-text">{description}</p>
     </div>
+
+
 </div>
 
 
@@ -25,6 +31,8 @@ const {description, icon} = Astro.props;
     font-size: 3rem;
     color: rgb(255, 255, 255);
     object-fit: cover;
+  }    img{
+    width: 4rem;
   }
 
 
