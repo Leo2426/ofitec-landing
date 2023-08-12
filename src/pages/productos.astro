@@ -134,6 +134,42 @@ import { imagen_prueba } from "./nosotros.astro";
     </Section>
 
 
+
+    <Section title="Soporte OFITEC" background_color= {back_color_secondary} font_color="white">
+      <div class="container">
+        <p>Brindamos soporte constante y actualizaciones a todos nuestros clientes.
+          Nuestros clientes satisfechos recomiendan nustros servicio y su actividad se ve reflejada en datos de trabajo constante</p>
+          
+          <div class="d-flex flex-column align-items-center">
+            <i class="fa-solid fa-headset"></i>
+          </div>
+
+          <div class="row">
+            <div class="col d-flex flex-column align-items-center">
+              <h1 class="numeros">500+</h1>
+              <p>Archivos generados</p>
+            </div>
+
+            <div class="col d-flex flex-column align-items-center">
+              <h1 class="numeros">20+</h1>
+              <p>Empresas trabajando</p>
+            </div>
+
+            <div class="col d-flex flex-column align-items-center">
+              <h1 class="numeros">300+</h1>
+              <p>Comprobantes emitidos</p>
+            </div>
+
+            <div class="col d-flex flex-column align-items-center">
+              <h1 class="numeros">1000+</h1>
+              <p>Notas de venta</p>
+            </div>
+
+
+          </div>
+        </div>
+    </Section>
+
 </Layout>
 
 
@@ -203,14 +239,34 @@ import { imagen_prueba } from "./nosotros.astro";
 
   .standar{
     background-color: rgb(220, 255, 113);
+  } .standar .btn-adquirir{
+    background-color: rgba(255, 21, 9, 0.812);
+  }.standar .btn-adquirir:hover{
+    background-color: rgba(214, 23, 13, 0.812);
   }
 
   .col:hover{
     transform: scale(1.02);
     transition: 0.8s;
-    
+  }
+
+  .btn:hover{
+    color: white;
+  }
 
 
+/* Soporte OFitec */
+  .fa-headset{
+    font-size: 8rem;
+    margin: 4rem;
+  }
+
+  .numeros{
+    font-size: 2.5rem;
+    font-weight: bold;
+  }
+  p{
+    font-size: 1.2rem;
   }
 
 </style>
