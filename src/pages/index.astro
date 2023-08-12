@@ -7,9 +7,9 @@ import Hero from "../components/Hero.astro"
 export const back_color_secondary = "rgb(48 48 68)"
 ---
 
-<Layout>
+<Layout title="Ofitec">
   
-  <Hero background_image="https://img.freepik.com/free-photo/group-people-working-out-business-plan-office_1303-15861.jpg?w=1480&t=st=1691689377~exp=1691689977~hmac=bf3748e27c5b58466719f87de48098aa9f25fd091ae7bec5fb9fabf04189d8e0">
+  <Hero background_image="/public/inicio.png">
     <h1 class="text-center titulo">Sistema de Facturación Electrónica</h1>
     <button type="button" class="btn-hero btn btn-success mx-auto">PROBAR SISTEMA GRATIS</button>
   </Hero>
@@ -77,30 +77,24 @@ export const back_color_secondary = "rgb(48 48 68)"
   
   </Section>
 
-  <img src="/public/g14.svg" alt="">
 
   <Section title="Ellos ya confían en nosotros">
     <div class="container">
       <div class="row">
-        <div class="col">
-          <img src="/favicon.svg" alt="" class="img-fluid">
+        <div class="col logo-empresa d-flex justify-content-center align-items-center">
+          <img src="/public/Empresas/Trokelart.jpeg" alt="" class="img-fluid">
         </div>
-        <div class="col">
-          <img src="/favicon.svg" alt="" class="img-fluid">
+        <div class="col logo-empresa d-flex justify-content-center align-items-center">
+          <img src="/public/Empresas/cool.png" alt="" class="img-fluid">
         </div>
-        <div class="col">
-          <img src="/favicon.svg" alt="" class="img-fluid">
+        <div class="col logo-empresa d-flex justify-content-center align-items-center">
+          <img src="/public/Empresas/Matprofer.JPG" alt="" class="img-fluid">
         </div>
-        <div class="col">
-          <img src="/favicon.svg" alt="" class="img-fluid">
-        </div>
-        <div class="col">
-          <img src="/favicon.svg" alt="" class="img-fluid">
+        <div class="col logo-empresa d-flex justify-content-center align-items-center">
+          <img src="/public/Empresas/glasse.jpg" alt="" class="img-fluid">
         </div>
       </div>
     </div>
-
-    <i  ></i>
   </Section>
 
 </Layout>
@@ -132,6 +126,21 @@ export const back_color_secondary = "rgb(48 48 68)"
 
   p{
     font-size: 1.2rem;
+  }
+
+  /* Ellos ya confian en nosotros */
+  .logo-empresa{
+    /* borde simple */
+    border: 2px solid #eaeaea; 
+    margin-right: 1rem;
+    margin-left: 1rem;
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px;
+    height: 8rem ;
+  }
+
+  .logo-empresa img{
+    max-height: 80%;
   }
 
 
