@@ -5,10 +5,11 @@ import Hero from "../components/Hero.astro";
 import Section from "../components/Section.astro";
 
 import { imagen_prueba } from "./nosotros.astro";
+
 ---
 
 <Layout title="Productos">
-    <Hero background_image= {imagen_prueba}>
+    <Hero background_image= "/public/planes.png">
         <div class="container">
             <h1 class="titulo">Planes que se adaptan a tu medida</h1>
             <p class="parrafo">Revisa nuestros planes y elige el que mas se adecúe a tu negocio, recuerda que estos son escalables sin costo adicional</p>
@@ -24,6 +25,7 @@ import { imagen_prueba } from "./nosotros.astro";
             <div class="card-plan">
               <h4 class="encabezado">Emprende</h4>
               <h1 class="precio fw-bold">s/.29 <span class="mes">/mes</span></h1>
+              <h1 class="precio-anual fw-bold">s/. 100 <span class="anual">/anual</span></h1>
               <p class="descripcion">El plan que te ayuda a dar el primer paso</p>
 
               <div class="content">
@@ -39,8 +41,8 @@ import { imagen_prueba } from "./nosotros.astro";
                 <p class="text-decoration-line-through"><i class="fa-solid fa-circle-check circle-uncolor "></i> Generador link de pago</p> <hr>
                 <p class="text-decoration-line-through"><i class="fa-solid fa-circle-check circle-uncolor "></i> Uso de app</p>
               </div>
-
-              <button type="button" class="btn btn-adquirir">Adquirir</button>
+              
+              <a class="btn btn-adquirir" target="_blank" href="https://api.whatsapp.com/send?phone=51990645449&text=Quiero el Plan Emprende" role="button">Lo quiero</a>
             </div>
           </div>
 
@@ -49,6 +51,7 @@ import { imagen_prueba } from "./nosotros.astro";
             <div class="card-plan">
               <h4 class="encabezado">Básico</h4>
               <h1 class="precio fw-bold">s/.49 <span class="mes">/mes</span></h1>
+              <h1 class="precio-anual fw-bold">s/. 100 <span class="anual">/anual</span></h1>
               <p class="descripcion">El plan que te ayuda crecer y organizar mejor tu negocio</p>
 
               <div class="content">
@@ -66,7 +69,7 @@ import { imagen_prueba } from "./nosotros.astro";
                 <p class="text-decoration-line-through"><i class="fa-solid fa-circle-check circle-uncolor "></i> Generador link de pago</p> <hr>
               </div>
 
-              <button type="button" class="btn btn-adquirir">Adquirir</button>
+              <a class="btn btn-adquirir" target="_blank" href="https://api.whatsapp.com/send?phone=51990645449&text=Quiero el Plan Básico" role="button">Lo quiero</a>
             </div>
           </div>
 
@@ -75,6 +78,7 @@ import { imagen_prueba } from "./nosotros.astro";
             <div class="card-plan standar">
               <h4 class="encabezado">Standar</h4>
               <h1 class="precio fw-bold">s/.79 <span class="mes">/mes</span></h1>
+              <h1 class="precio-anual fw-bold">s/. 100 <span class="anual">/anual</span></h1>
               <p class="descripcion">Automatiza tu negocio y controla tus actividades</p>
 
               <div class="content">
@@ -94,7 +98,7 @@ import { imagen_prueba } from "./nosotros.astro";
                 <p class="text-decoration-line-through"><i class="fa-solid fa-circle-check circle-uncolor "></i> Tienda Virtual</p> <hr>
               </div>
 
-              <button type="button" class="btn btn-adquirir">Adquirir</button>
+              <a class="btn btn-adquirir" target="_blank" href="https://api.whatsapp.com/send?phone=51990645449&text=Quiero el Plan Standar" role="button">Lo quiero</a>
             </div>
           </div>
 
@@ -103,6 +107,7 @@ import { imagen_prueba } from "./nosotros.astro";
             <div class="card-plan">
               <h4 class="encabezado">Premium</h4>
               <h1 class="precio fw-bold">s/.119 <span class="mes">/mes</span></h1>
+              <h1 class="precio-anual fw-bold">s/. 100 <span class="anual">/anual</span></h1>
               <p class="descripcion">Un plan que te permite tener tu negocio automatizado sin límites</p>
 
               <div class="content">
@@ -122,11 +127,12 @@ import { imagen_prueba } from "./nosotros.astro";
                 <p><i class="fa-solid fa-circle-check circle-color "></i> Tienda Virtual</p> <hr>
               </div>
 
-              <button type="button" class="btn btn-adquirir">Adquirir</button>
+              <a class="btn btn-adquirir" target="_blank" href="https://api.whatsapp.com/send?phone=51990645449&text=Quiero el Plan Premium" role="button">Lo quiero</a>
             </div>
           </div>
 
         </div>
+      
       </div>
 
 
@@ -204,8 +210,20 @@ import { imagen_prueba } from "./nosotros.astro";
     color: dimgrey;
   }
 
+  .anual{
+    font-size: 0.8rem;
+    color: dimgrey;
+    color: rgb(52, 163, 110);
+  }
+
+  .precio-anual{
+    font-size: 1rem;
+    color: rgb(52, 163, 110);
+    transform: translateY(-0.3rem);
+
+  }
+
   .descripcion{
-    margin-top: 0.8rem;
     margin-bottom: 1.8rem;
   }
 
