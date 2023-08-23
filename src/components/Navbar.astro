@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand  ">
   <div class="container-fluid ">
-    <a class="navbar-brand" href="/"> <img class="img-fluid logo" src="/public/icono-ofitec-blanco.svg" alt=""> <img class="letra-ofitec" src="/public/Letras-Ofitec-Blanco.svg" alt=""></a>
+    <a class="navbar-brand" href="/"> <img class="img-fluid logo" src="/icono-ofitec-blanco.svg" alt=""> <img class="letra-ofitec" src="/Letras-Ofitec-Blanco.svg" alt=""></a>
 
     <div class="collapse navbar-collapse " id="navbarNav">
       <ul class="navbar-nav">
@@ -51,4 +51,18 @@
     margin: 10px;
   }
 
+  @media only screen and (max-width: 600px) {
+    .logo{
+      width: 0px;
+    }
+
+    .link-pages{
+      font-size: 0.7rem;
+    }
+    .letra-ofitec{
+    width: 70px;
+    margin: 10px;
+    transform: translateX(-10px);
+  }
+  }
 </style>

@@ -3,9 +3,6 @@ import Layout from "../layouts/Layout.astro"
 import { back_color_secondary } from "./index.astro";
 import Hero from "../components/Hero.astro";
 import Section from "../components/Section.astro";
-
-import { imagen_prueba } from "./nosotros.astro";
-
 ---
 
 <Layout title="Productos">
@@ -20,38 +17,13 @@ import { imagen_prueba } from "./nosotros.astro";
       <div class="container">
         <div class="row">
 
-          <!-- Plan Emprende -->
-          <div class="col">
-            <div class="card-plan">
-              <h4 class="encabezado">Emprende</h4>
-              <h1 class="precio fw-bold">s/.29 <span class="mes">/mes</span></h1>
-              <h1 class="precio-anual fw-bold">s/. 100 <span class="anual">/anual</span></h1>
-              <p class="descripcion">El plan que te ayuda a dar el primer paso</p>
-
-              <div class="content">
-                <p><i class="fa-solid fa-circle-check circle-color"></i> Ventas</p> <hr>
-                <p><i class="fa-solid fa-circle-check circle-color"></i> Compras</p> <hr>
-                <p><i class="fa-solid fa-circle-check circle-color"></i> POS</p> <hr>
-                <p><i class="fa-solid fa-circle-check circle-color"></i> Reportes</p> <hr>
-                <p><i class="fa-solid fa-circle-check circle-color"></i> 1 usuario / 1 local</p> <hr>
-                <p><i class="fa-solid fa-circle-check circle-color"></i> Productos</p> <hr>
-                <p><i class="fa-solid fa-circle-check circle-color"></i> 300 CPE al mes</p> <hr>
-                <p class="text-decoration-line-through"><i class="fa-solid fa-circle-check circle-uncolor "></i> Inventarios</p> <hr>
-                <p class="text-decoration-line-through"><i class="fa-solid fa-circle-check circle-uncolor "></i> Comprobantes avanzados</p> <hr>
-                <p class="text-decoration-line-through"><i class="fa-solid fa-circle-check circle-uncolor "></i> Generador link de pago</p> <hr>
-                <p class="text-decoration-line-through"><i class="fa-solid fa-circle-check circle-uncolor "></i> Uso de app</p>
-              </div>
-              
-              <a class="btn btn-adquirir" target="_blank" href="https://api.whatsapp.com/send?phone=51990645449&text=Quiero el Plan Emprende" role="button">Lo quiero</a>
-            </div>
-          </div>
 
           <!-- PLan Basico -->
           <div class="col">
             <div class="card-plan">
               <h4 class="encabezado">Básico</h4>
-              <h1 class="precio fw-bold">s/.49 <span class="mes">/mes</span></h1>
-              <h1 class="precio-anual fw-bold">s/. 100 <span class="anual">/anual</span></h1>
+              <h1 class="precio fw-bold">s/.50 <span class="mes">/mes</span></h1>
+              <h1 class="precio-anual fw-bold">s/. 420 <span class="anual">/anual</span></h1>
               <p class="descripcion">El plan que te ayuda crecer y organizar mejor tu negocio</p>
 
               <div class="content">
@@ -77,8 +49,8 @@ import { imagen_prueba } from "./nosotros.astro";
           <div class="col">
             <div class="card-plan standar">
               <h4 class="encabezado">Standar</h4>
-              <h1 class="precio fw-bold">s/.79 <span class="mes">/mes</span></h1>
-              <h1 class="precio-anual fw-bold">s/. 100 <span class="anual">/anual</span></h1>
+              <h1 class="precio fw-bold">s/.80 <span class="mes">/mes</span></h1>
+              <h1 class="precio-anual fw-bold">s/. 780 <span class="anual">/anual</span></h1>
               <p class="descripcion">Automatiza tu negocio y controla tus actividades</p>
 
               <div class="content">
@@ -106,8 +78,8 @@ import { imagen_prueba } from "./nosotros.astro";
           <div class="col">
             <div class="card-plan">
               <h4 class="encabezado">Premium</h4>
-              <h1 class="precio fw-bold">s/.119 <span class="mes">/mes</span></h1>
-              <h1 class="precio-anual fw-bold">s/. 100 <span class="anual">/anual</span></h1>
+              <h1 class="precio fw-bold">s/.120 <span class="mes">/mes</span></h1>
+              <h1 class="precio-anual fw-bold">s/. 1260 <span class="anual">/anual</span></h1>
               <p class="descripcion">Un plan que te permite tener tu negocio automatizado sin límites</p>
 
               <div class="content">
@@ -153,22 +125,22 @@ import { imagen_prueba } from "./nosotros.astro";
           <div class="row">
             <div class="col d-flex flex-column align-items-center">
               <h1 class="numeros">500+</h1>
-              <p>Archivos generados</p>
+              <p class="text-center" >Archivos generados</p>
             </div>
 
             <div class="col d-flex flex-column align-items-center">
               <h1 class="numeros">20+</h1>
-              <p>Empresas trabajando</p>
+              <p class="text-center">Empresas trabajando</p>
             </div>
 
             <div class="col d-flex flex-column align-items-center">
               <h1 class="numeros">300+</h1>
-              <p>Comprobantes emitidos</p>
+              <p class="text-center"> Comprobantes emitidos</p>
             </div>
 
             <div class="col d-flex flex-column align-items-center">
               <h1 class="numeros">1000+</h1>
-              <p>Notas de venta</p>
+              <p class="text-center">Notas de venta</p>
             </div>
 
 
@@ -285,6 +257,19 @@ import { imagen_prueba } from "./nosotros.astro";
   }
   p{
     font-size: 1.2rem;
+    text-align: left;
   }
 
+
+  @media only screen and (max-width: 600px) {
+  .titulo{
+    font-size: 3rem;
+  }
+  .parrafo{
+    font-size: 1rem;
+  }
+  .card-plan{
+    margin: 1rem;
+  }
+}
 </style>

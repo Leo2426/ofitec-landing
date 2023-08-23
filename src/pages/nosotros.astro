@@ -18,16 +18,16 @@ export const imagen_prueba = "https://concepto.de/wp-content/uploads/2019/05/leo
     <Section title="Somos OFITEC" background_color= {back_color_secondary} font_color="white">
         <div class="container">
             <div class="row">
-                <div class="col my-4 d-flex flex-column align-items-center">
-                    <h1>Nuestra Empresa</h1>
-                    <p>Somos Ofitec una Empresa dedicada a brindar sistemas digitales para organizar y analizar la informaciön de su emprendimiento o negocios de una forma sencilla y con un bajo costo. Además te
+                <div class="col-12 my-4 d-flex flex-column align-items-center">
+                    <h1 class="text-center" >Nuestra Empresa</h1>
+                    <p class="descripcion">Somos Ofitec una Empresa dedicada a brindar sistemas digitales para organizar y analizar la informaciön de su emprendimiento o negocios de una forma sencilla y con un bajo costo. Además te
                         brindamos accesorios para equipar tu negocio.</p>
                         <i class="fas fa-computer-speaker"></i>
                 </div>
                 
-                <div class="col my-4 d-flex flex-column align-items-center">
+                <div class="col-12 my-4 d-flex flex-column align-items-center">
                     <h1>Nuestra Misión</h1>
-                    <p>Somos Ofitec una Empresa dedicada a brindar sistemas digitales para organizar y analizar la informaciön de su emprendimiento o negocios de una forma sencilla y con un bajo costo. Además te
+                    <p class="descripcion">Somos Ofitec una Empresa dedicada a brindar sistemas digitales para organizar y analizar la informaciön de su emprendimiento o negocios de una forma sencilla y con un bajo costo. Además te
                         brindamos accesorios para equipar tu negocio.</p>
                         <i class="fas fa-globe-americas"></i>
                 </div>
@@ -39,7 +39,7 @@ export const imagen_prueba = "https://concepto.de/wp-content/uploads/2019/05/leo
     <Section title="Nuestro Equipo">
         <div class="container mt-5">
             <div class="row">
-                <div class="col d-flex flex-column align-items-center">
+                <div class="col mb-5 d-flex flex-column align-items-center">
                     <img src={imagen_prueba} class="imagen" alt="CEO">
                     <h1 class="nombre text-center">Brian Fernandez Medina</h1>
                     <h2 class="cargo">CEO</h2>
@@ -106,5 +106,41 @@ export const imagen_prueba = "https://concepto.de/wp-content/uploads/2019/05/leo
 
   .col p {
     text-align: justify;
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
+
+  @media only screen and (max-width: 600px) {
+  .titulo{
+    font-size: 3rem;
+  }
+  .parrafo{
+    font-size: 1rem;
+  }
+
+  p{
+    font-size: 1rem;
+  }
+
+  .nombre{
+        font-size: 1.5rem;
+
+    }
+
+    .cargo{
+        font-size: 1.2rem;
+        color: rgb(52, 163, 110);
+    }
+
+    .imagen{
+        width: 200px;
+        height: 200px;
+    }
+    i{
+    font-size: 7rem;
+    color: white;
+  }
+
+
+}
 </style>

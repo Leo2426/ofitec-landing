@@ -11,7 +11,28 @@ export const back_color_secondary = "rgb(48 48 68)"
   
   <Hero background_image="/inicio.png">
     <h1 class="text-center titulo">Sistema de Facturación Electrónica</h1>
-    <button type="button" class="btn-hero btn btn-success mx-auto">PROBAR SISTEMA GRATIS</button>
+    <div class="container d-flex justify-content-center">
+      <a href="https://demo.ofitecfacturas.com/" target="_blank"><button data-bs-toggle="modal" data-bs-target="#exampleModal" type="button" class="btn-hero btn btn-success mx-auto">PROBAR SISTEMA GRATIS</button></a> 
+    </div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">DATOS PARA INGRESAR</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p><span style="font-weight: bold" >Correo: </span> demo@gmail.com </p>
+        <p><span style="font-weight: bold" >Contraseña: </span> 123456 </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
   </Hero>
 
   <Section title="Controla tu Negocio">
@@ -57,24 +78,24 @@ export const back_color_secondary = "rgb(48 48 68)"
     
     <div class="container numeros-negocio">
       <div class="row">
-        <div class="col col-md-6 d-flex flex-column justify-content-center align-items-center">
+        <div class="col-6  d-flex flex-column justify-content-center align-items-center">
           <h1 class="fw-bold">500+</h1>
-          <p>Archivos generados</p>
+          <p class="text-center" >Archivos generados</p>
         </div>
 
-        <div class="col col-md-6 d-flex flex-column justify-content-center align-items-center">
+        <div class="col-6  d-flex flex-column justify-content-center align-items-center">
           <h1 class="fw-bold" >20+</h1>
-          <p>Empresas trabajando</p>
+          <p class="text-center" >Empresas trabajando</p>
         </div>
 
-        <div class="col col-md-6 d-flex flex-column justify-content-center align-items-center">
+        <div class="col-6  d-flex flex-column justify-content-center align-items-center">
           <h1 class="fw-bold">300+</h1>
-          <p>Comprobantes emitidos</p>
+          <p  class="text-center" > Comprobantes emitidos</p>
         </div>      
       
-        <div class="col col-md-6 d-flex flex-column justify-content-center align-items-center">
+        <div class="col-6  d-flex flex-column justify-content-center align-items-center">
           <h1 class="fw-bold" >1000+</h1>
-          <p>Notas de venta</p>
+          <p class="text-center" >Notas de venta</p>
         </div>
       </div>
     </div>
@@ -84,17 +105,17 @@ export const back_color_secondary = "rgb(48 48 68)"
 
   <Section title="Ellos ya confían en nosotros">
     <div class="container">
-      <div class="row">
-        <div class="col logo-empresa d-flex justify-content-center align-items-center">
+      <div class="row d-flex justify-content-center">
+        <div class="col-5 logo-empresa d-flex justify-content-center align-items-center">
           <img src="/Empresas/Trokelart.jpeg" alt="" class="img-fluid">
         </div>
-        <div class="col logo-empresa d-flex justify-content-center align-items-center">
+        <div  class="col-5 logo-empresa d-flex justify-content-center align-items-center">
           <img src="/Empresas/cool.png" alt="" class="img-fluid">
         </div>
-        <div class="col logo-empresa d-flex justify-content-center align-items-center">
+        <div class="col-5 logo-empresa d-flex justify-content-center align-items-center">
           <img src="/Empresas/Matprofer.JPG" alt="" class="img-fluid">
         </div>
-        <div class="col logo-empresa d-flex justify-content-center align-items-center">
+        <div class="col-5 logo-empresa d-flex justify-content-center align-items-center">
           <img src="/Empresas/glasse.jpg" alt="" class="img-fluid">
         </div>
       </div>
@@ -110,6 +131,9 @@ export const back_color_secondary = "rgb(48 48 68)"
 
 <style>
 
+  #uno{
+    background-color: blueviolet;
+  }
   /* Hero */
   .titulo{
     color: white;
@@ -122,6 +146,7 @@ export const back_color_secondary = "rgb(48 48 68)"
     font-size: 1.5rem;
     padding: 0.8rem 2rem;
   }
+
 
 /* Fortalece tu negocio */
   .numeros-negocio{
@@ -136,8 +161,8 @@ export const back_color_secondary = "rgb(48 48 68)"
   .logo-empresa{
     /* borde simple */
     border: 2px solid #eaeaea; 
-    margin-right: 1rem;
-    margin-left: 1rem;
+    margin: 1rem;
+
     background-color: rgb(255, 255, 255);
     border-radius: 5px;
     height: 8rem ;
@@ -149,4 +174,20 @@ export const back_color_secondary = "rgb(48 48 68)"
 
 
 
+  @media only screen and (max-width: 600px) {
+  .titulo{
+    font-size: 3rem;
+  }
+  .btn-hero{
+    font-size: 1rem;
+    padding: 0.8rem 1rem;
+  }
+
+  .logo-empresa{
+    /* borde simple */
+    margin: 0.5rem;
+
+  }
+  }
 </style>
+

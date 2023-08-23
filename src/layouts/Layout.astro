@@ -11,23 +11,30 @@ const {title} = Astro.props;
 
 ---
 <!DOCTYPE html>
-<html lang="esp">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="/public/icono-ofitec-celeste.svg">
+  <html lang="esp">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="/icono-ofitec-celeste.svg">
 
-    <title>{title}</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v6.0.0-beta3/css/all.css">
-</head>
-<body>
-    <Navbar/>
-    <slot/>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
-    <Footer></Footer>
-</body>
-</html>
+        <title>{title}</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v6.0.0-beta3/css/all.css">
+    </head>
+    <body>
+        <Navbar/>
+        <slot/>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+        <a href="https://wa.me/+51990645449/?text=Hola, estoy interesado en el sistema de facturación" target="_blank" class="whatsapp-float">
+          <div class="whatsapp-icon">
+            <i class="fab fa-whatsapp"></i>
+          </div>
+        </a>
+        <Footer></Footer>
+    </body>
+  </html>
+
+
 
 
 
@@ -39,6 +46,36 @@ body{
 }
 p{
     font-size: 1.2rem;
+  }
+
+
+    /* Estilos para el botón flotante */
+    .whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 999;
+  }
+
+  /* Estilos para el ícono de WhatsApp */
+  .whatsapp-icon {
+    display: block;
+    width: 60px;
+    height: 60px;
+    background-color: #25D366;
+    color: #fff;
+    text-align: center;
+    line-height: 60px;
+    border-radius: 50%;
+    font-size: 24px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, transform 0.3s;
+  }
+
+  /* Cambio de color y escala al pasar el cursor */
+  .whatsapp-icon:hover {
+    background-color: #128C7E;
+    transform: scale(1.1);
   }
 
 </style>

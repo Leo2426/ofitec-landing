@@ -1,31 +1,44 @@
   <!-- Footer -->
   <div class="container-fluid">
-    <footer class="d-flex justify-content-between align-items-center px-5 py-5">
-        <img id="letras-footer" src="/public/Letras-Ofitec-Celestes.svg" class="img-fluid" alt="">
-    
-        <ul class="list-inline mb-0">
-            <li class="list-inline-item mr-3">
-                <a target="_blank" href="https://www.facebook.com/Ofitec-EIRL-100282908719810" class="text-muted"><i class="fab fa-facebook fa-2x"></i></a>
-            </li>
-            <li class="list-inline-item mr-3">
-                <a target="_blank" href="https://www.instagram.com/ofitec_eirl/" class="text-muted"><i class="fab fa-instagram fa-2x"></i></a>
-            </li>
-            <!-- whatsapp -->
-            <li class="list-inline-item mr-3">
-                <a target="_blank"  href="https://api.whatsapp.com/send?phone=51990645449&text=Quisiera mas información" class="text-muted"><i class="fab fa-whatsapp fa-2x"></i></a>
-            </li>
-        </ul>
-            
-        <ul class="nav justify-content-end">
-            <li class="nav-item"><a href="/" class="nav-link px-2 text-muted">Incio</a></li>
-            <li class="nav-item"><a href="/nosotros" class="nav-link px-2 text-muted">Nosotros</a></li>
-            <li class="nav-item"><a href="/productos" class="nav-link px-2 text-muted">Productos</a></li>
-        </ul>
+    <footer class="px-5 py-5">
+
+        <div class="container">
+            <div id="fila" class="row d-flex">
+                <div class="d-flex justify-content-center col-md-4 my-2  my-md-0">
+                    <img id="letras-footer" src="/Letras-Ofitec-Celestes.svg" class="img-fluid" alt="">
+                </div>
+
+                <div class="col-md-4 my-2  my-md-0 d-flex justify-content-evenly">
+                    <a target="_blank" href="https://www.facebook.com/Ofitec2020.peru" class="text-muted"><i class="fab fa-facebook fa-2x"></i></a>
+                    <a target="_blank" href="https://www.instagram.com/ofitec2020/" class="text-muted"><i class="fab fa-instagram fa-2x"></i></a>
+                    <a target="_blank"  href="https://api.whatsapp.com/send?phone=51990645449&text=Quisiera mas información" class="text-muted"><i class="fab fa-whatsapp fa-2x"></i></a>
+                </div>
+
+                <div class="col-md-4">
+                    <ul class="nav my-2  my-md-0 justify-content-center justify-content-md-end">
+                        <li class="nav-item"><a href="/" class="nav-link px-2 text-muted">Incio</a></li>
+                        <li class="nav-item"><a href="/nosotros" class="nav-link px-2 text-muted">Nosotros</a></li>
+                        <li class="nav-item"><a href="/productos" class="nav-link px-2 text-muted">Productos</a></li>
+                    </ul>
+                </div>
+                
+            </div>
+
+        </div>
+
     </footer>
   </div>
 
   <style>
     #letras-footer{
-        width: 20%;
-    }
+        width: 50%;
+        margin-bottom: 1rem;
+    }        
+@media only screen and (max-width: 600px) {
+  li{
+    font-size: 0.8rem;
+  }
+
+}
+
   </style>
