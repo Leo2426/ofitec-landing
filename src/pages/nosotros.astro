@@ -4,11 +4,10 @@ import { back_color_secondary } from "./index.astro";
 import Hero from "../components/Hero.astro";
 import Section from "../components/Section.astro";
 
-export const imagen_prueba = "https://concepto.de/wp-content/uploads/2019/05/leon-sabana-africa-e1559242836802.jpg"
 ---
 
 <Layout title="Nosotros">
-    <Hero background_image="/team.png">
+    <Hero background_image= "/team.jpg">
        <div class="container">
         <h1 class="titulo">El mejor equipo a su servicio</h1>
         <p class="parrafo">Contamos con un staff de profesionales para birndarle el mejor soporte  para su empresa</p>
@@ -40,12 +39,12 @@ export const imagen_prueba = "https://concepto.de/wp-content/uploads/2019/05/leo
         <div class="container mt-5">
             <div class="row">
                 <div class="col mb-5 d-flex flex-column align-items-center">
-                    <img src={imagen_prueba} class="imagen" alt="CEO">
+                    <img src="/brian_fernandez.jpeg" class="imagen" alt="CEO">
                     <h1 class="nombre text-center">Brian Fernandez Medina</h1>
                     <h2 class="cargo">CEO</h2>
                 </div>
                 <div class="col d-flex flex-column align-items-center">
-                    <img src={imagen_prueba} class="imagen" alt="Administradora">
+                    <img src="/luz_campos.jpeg" class="imagen" alt="Administradora">
                     <h1 class="nombre text-center">Luz Marlene Campos González</h1>
                     <h2 class="cargo">Administradora</h2>
                 </div>
