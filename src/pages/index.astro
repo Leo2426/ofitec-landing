@@ -12,7 +12,7 @@ export const back_color_secondary = "rgb(48 48 68)"
   <Hero background_image="/inicio.jpg">
     <h1 class="text-center titulo">Sistema de Facturación Electrónica</h1>
     <div class="container d-flex justify-content-center">
-      <a href="https://demo.ofitecfacturas.com/" target="_blank"><button data-bs-toggle="modal" data-bs-target="#exampleModal" type="button" class="btn-hero btn btn-success mx-auto">PROBAR SISTEMA GRATIS</button></a> 
+      <a href="https://demo.ofitecfacturas.com/" target="_blank"><button data-bs-toggle="modal" data-bs-target="#exampleModal" type="button" class="btn-hero btn btn-success mx-auto">PROBAR SISTEMA GRATIS</button></a>
     </div>
 
 <!-- Modal -->
@@ -68,10 +68,17 @@ export const back_color_secondary = "rgb(48 48 68)"
     </div>
 
     <!-- insertar un video -->
-    <div class="container">
-      <video src="/demo.mp4" class="pt-5 img-fluid" controls></video>
+    <div class="video-container">
+      <iframe
+          src="https://www.youtube.com/embed/9Rks0Gflci8"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+      ></iframe>
     </div>
-    
+
+
   </Section> 
   
   <Section title="Fortalece tu Negocio" background_color = {back_color_secondary} font_color="white" >
@@ -84,7 +91,7 @@ export const back_color_secondary = "rgb(48 48 68)"
         </div>
 
         <div class="col-6  d-flex flex-column justify-content-center align-items-center">
-          <h1 class="fw-bold" >20+</h1>
+          <h1 class="fw-bold" >100+</h1>
           <p class="text-center" >Empresas trabajando</p>
         </div>
 
@@ -162,6 +169,22 @@ export const back_color_secondary = "rgb(48 48 68)"
           <img src="/Empresas/panaderia.jpg" alt="" class="img-fluid">
         </div>
 
+        <div class="col-5 logo-empresa d-flex justify-content-center align-items-center">
+          <img src="/Empresas/arios.jpg" alt="" class="img-fluid">
+        </div>
+
+        <div class="col-5 logo-empresa d-flex justify-content-center align-items-center">
+          <img src="/Empresas/firat.jpg" alt="" class="img-fluid">
+        </div>
+
+        <div class="col-5 logo-empresa d-flex justify-content-center align-items-center">
+          <img src="/Empresas/la%2039.jpg" alt="" class="img-fluid">
+        </div>
+
+        <div class="col-5 logo-empresa d-flex justify-content-center align-items-center">
+          <img src="/Empresas/sanfer.jpg" alt="" class="img-fluid">
+        </div>
+
       </div>
 
     </div>
@@ -216,7 +239,17 @@ export const back_color_secondary = "rgb(48 48 68)"
   .logo-empresa img{
     max-height: 80%;
   }
-
+  .video-container {
+    display: flex;
+    justify-content: center;
+    width: 60vw;
+    height: 20vw;
+  }
+  .video-container iframe {
+    width: 100%;
+    height: auto;
+    max-width: 800px; /* Opcional: puedes ajustar el valor máximo */
+  }
 
 
   @media only screen and (max-width: 600px) {
@@ -233,6 +266,13 @@ export const back_color_secondary = "rgb(48 48 68)"
     margin: 0.5rem;
 
   }
+
+  .video-container {
+    width: 100%;
+    height: 50vw;
+  }
+
+
   }
 </style>
 
