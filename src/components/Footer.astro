@@ -1,3 +1,7 @@
+---
+import { WHATSAPP_NUMBER } from "../config/constants";
+---
+
   <!-- Footer -->
   <div class="container-fluid">
     <footer class="px-5 py-5">
@@ -5,18 +9,19 @@
         <div class="container">
             <div id="fila" class="row d-flex">
                 <div class="d-flex justify-content-center col-md-4 my-2  my-md-0">
-                    <img id="letras-footer" src="/Letras-Ofitec-Celestes.svg" class="img-fluid" alt="">
+                    <img id="letras-footer" src="/Letras-Ofitec-Celestes.svg" class="img-fluid" alt="Ofitec">
                 </div>
 
                 <div class="col-md-4 my-2  my-md-0 d-flex justify-content-evenly">
-                    <a target="_blank" href="https://www.facebook.com/Ofitec2020.peru" class="text-muted"><i class="fab fa-facebook fa-2x"></i></a>
-                    <a target="_blank" href="https://www.instagram.com/ofitec2020/" class="text-muted"><i class="fab fa-instagram fa-2x"></i></a>
-                    <a target="_blank"  href="https://api.whatsapp.com/send?phone=51990645449" class="text-muted"><i class="fab fa-whatsapp fa-2x"></i></a>
+                    <a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/Ofitec2020.Facturacionelectronica" class="text-muted" aria-label="Facebook de Ofitec"><i class="fab fa-facebook fa-2x"></i></a>
+                    <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/ofitec2020/" class="text-muted" aria-label="Instagram de Ofitec"><i class="fab fa-instagram fa-2x"></i></a>
+                    <a target="_blank" rel="noopener noreferrer" href="https://www.tiktok.com/@ofitec2020" class="text-muted" aria-label="TikTok de Ofitec"><i class="fab fa-tiktok fa-2x"></i></a>
+                    <a target="_blank" rel="noopener noreferrer" href={`https://api.whatsapp.com/send?phone=${WHATSAPP_NUMBER}`} class="text-muted" aria-label="WhatsApp de Ofitec"><i class="fab fa-whatsapp fa-2x"></i></a>
                 </div>
 
                 <div class="col-md-4">
                     <ul class="nav my-2  my-md-0 justify-content-center justify-content-md-end">
-                        <li class="nav-item"><a href="/" class="nav-link px-2 text-muted">Incio</a></li>
+                        <li class="nav-item"><a href="/" class="nav-link px-2 text-muted">Inicio</a></li>
                         <li class="nav-item"><a href="/nosotros" class="nav-link px-2 text-muted">Nosotros</a></li>
                         <li class="nav-item"><a href="/productos" class="nav-link px-2 text-muted">Productos</a></li>
                     </ul>

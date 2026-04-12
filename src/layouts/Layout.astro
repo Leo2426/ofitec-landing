@@ -1,14 +1,19 @@
 ---
 import Navbar from "../components/Navbar.astro";
 import Footer from "../components/Footer.astro";
+import { WHATSAPP_NUMBER } from "../config/constants";
 
 interface Props{
   title: string;
   description?: string;
 }
 
-const {title} = Astro.props;
+const {
+  title,
+  description = "Ofitec — Sistema de Facturación Electrónica para tu negocio. Emite comprobantes, controla inventarios y gestiona tu empresa desde cualquier lugar."
+} = Astro.props;
 
+const canonicalURL = new URL(Astro.url.pathname, "https://ofitec.netlify.app");
 ---
 <!DOCTYPE html>
   <html lang="esp">
@@ -17,15 +22,66 @@ const {title} = Astro.props;
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="icon" href="/icono-ofitec-celeste.svg">
 
-        <title>{title}</title>
+        <!-- SEO -->
+        <title>{title} | Ofitec</title>
+        <meta name="description" content={description}>
+        <link rel="canonical" href={canonicalURL}>
+
+        <!-- Open Graph -->
+        <meta property="og:type" content="website">
+        <meta property="og:url" content={canonicalURL}>
+        <meta property="og:title" content={`${title} | Ofitec`}>
+        <meta property="og:description" content={description}>
+        <meta property="og:image" content="https://ofitec.netlify.app/icono-ofitec-celeste.svg">
+        <meta property="og:locale" content="es_PE">
+
+        <!-- Twitter Card -->
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:title" content={`${title} | Ofitec`}>
+        <meta name="twitter:description" content={description}>
+
+        <!-- Preconnect para CDNs -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="preconnect" href="https://cdn.jsdelivr.net">
+
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
         <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v6.0.0-beta3/css/all.css">
+
+        <!-- Schema.org JSON-LD -->
+        <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "SoftwareApplication",
+          "name": "Ofitec",
+          "applicationCategory": "BusinessApplication",
+          "description": "Sistema de Facturación Electrónica para negocios y emprendimientos en Perú",
+          "url": "https://ofitec.netlify.app",
+          "operatingSystem": "Web, Android",
+          "offers": {
+            "@type": "AggregateOffer",
+            "priceCurrency": "PEN",
+            "lowPrice": "50",
+            "highPrice": "120"
+          },
+          "provider": {
+            "@type": "Organization",
+            "name": "Ofitec",
+            "url": "https://ofitec.netlify.app",
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "contactType": "customer support",
+              "availableLanguage": "Spanish"
+            }
+          }
+        }
+        </script>
     </head>
     <body>
         <Navbar/>
         <slot/>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
-        <a href="https://wa.me/+51990645449/?text=Hola, estoy interesado en el sistema de facturación" target="_blank" class="whatsapp-float">
+        <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+        <a href={`https://wa.me/${WHATSAPP_NUMBER}/?text=Hola, estoy interesado en el sistema de facturación`} target="_blank" rel="noopener noreferrer" class="whatsapp-float" aria-label="Contactar por WhatsApp">
           <div class="whatsapp-icon">
             <i class="fab fa-whatsapp"></i>
           </div>

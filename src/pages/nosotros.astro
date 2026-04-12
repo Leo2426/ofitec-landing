@@ -1,33 +1,32 @@
 ---
 import Layout from "../layouts/Layout.astro"
-import { back_color_secondary } from "./index.astro";
+import { BACK_COLOR_SECONDARY } from "../config/constants";
 import Hero from "../components/Hero.astro";
 import Section from "../components/Section.astro";
 
 ---
 
-<Layout title="Nosotros">
+<Layout title="Nosotros" description="Conoce al equipo de Ofitec. Somos una empresa peruana dedicada a brindar sistemas digitales de facturación electrónica para negocios y emprendimientos.">
     <Hero background_image= "/team.jpg">
        <div class="container">
         <h1 class="titulo">El mejor equipo a su servicio</h1>
-        <p class="parrafo">Contamos con un staff de profesionales para birndarle el mejor soporte  para su empresa</p>
+        <p class="parrafo">Contamos con un staff de profesionales para brindarle el mejor soporte para su empresa</p>
        </div>
     </Hero>
 
-    <Section title="Somos OFITEC" background_color= {back_color_secondary} font_color="white">
+    <Section title="Somos OFITEC" background_color={BACK_COLOR_SECONDARY} font_color="white">
         <div class="container">
             <div class="row">
                 <div class="col-12 my-4 d-flex flex-column align-items-center">
                     <h1 class="text-center" >Nuestra Empresa</h1>
-                    <p class="descripcion">Somos Ofitec una Empresa dedicada a brindar sistemas digitales para organizar y analizar la informaciön de su emprendimiento o negocios de una forma sencilla y con un bajo costo. Además te
+                    <p class="descripcion">Somos Ofitec una Empresa dedicada a brindar sistemas digitales para organizar y analizar la información de su emprendimiento o negocios de una forma sencilla y con un bajo costo. Además te
                         brindamos accesorios para equipar tu negocio.</p>
                         <i class="fas fa-computer-speaker"></i>
                 </div>
                 
                 <div class="col-12 my-4 d-flex flex-column align-items-center">
                     <h1>Nuestra Misión</h1>
-                    <p class="descripcion">Somos Ofitec una Empresa dedicada a brindar sistemas digitales para organizar y analizar la informaciön de su emprendimiento o negocios de una forma sencilla y con un bajo costo. Además te
-                        brindamos accesorios para equipar tu negocio.</p>
+                    <p class="descripcion">Ayudamos a emprendedores y negocios a crecer con tecnología accesible, brindando herramientas digitales que simplifican la gestión, automatizan procesos y permiten tomar mejores decisiones con información en tiempo real.</p>
                         <i class="fas fa-globe-americas"></i>
                 </div>
             </div>
@@ -39,12 +38,12 @@ import Section from "../components/Section.astro";
         <div class="container mt-5">
             <div class="row">
                 <div class="col mb-5 d-flex flex-column align-items-center">
-                    <img src="/brian_fernandez.jpeg" class="imagen" alt="CEO">
+                    <img src="/brian_fernandez.jpeg" class="imagen" alt="Brian Fernandez Medina — CEO" loading="lazy">
                     <h1 class="nombre text-center">Brian Fernandez Medina</h1>
                     <h2 class="cargo">CEO</h2>
                 </div>
                 <div class="col d-flex flex-column align-items-center">
-                    <img src="/luz_campos.jpeg" class="imagen" alt="Administradora">
+                    <img src="/luz_campos.jpeg" class="imagen" alt="Luz Marlene Campos González — Administradora" loading="lazy">
                     <h1 class="nombre text-center">Luz Marlene Campos González</h1>
                     <h2 class="cargo">Administradora</h2>
                 </div>

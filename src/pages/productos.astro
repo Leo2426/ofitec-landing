@@ -1,11 +1,11 @@
 ---
 import Layout from "../layouts/Layout.astro"
-import { back_color_secondary } from "./index.astro";
+import { BACK_COLOR_SECONDARY, WHATSAPP_NUMBER } from "../config/constants";
 import Hero from "../components/Hero.astro";
 import Section from "../components/Section.astro";
 ---
 
-<Layout title="Productos">
+<Layout title="Planes y Precios" description="Conoce los planes de Ofitec: Básico, Standar y Premium. Facturación electrónica desde S/. 50 al mes. Elige el plan que se adapta a tu negocio.">
     <Hero background_image= "/planes.jpg">
         <div class="container">
             <h1 class="titulo">Planes que se adaptan a tu medida</h1>
@@ -34,7 +34,7 @@ import Section from "../components/Section.astro";
                 <p><i class="fa-solid fa-circle-check circle-color"></i> Productos</p> <hr>
                 <p><i class="fa-solid fa-circle-check circle-color"></i> 2 usuario / 1 local</p> <hr>
                 <p><i class="fa-solid fa-circle-check circle-color"></i> 700 CPE al mes</p> <hr>
-                <p class="text-decoration-line-through"><i class="fa-solid fa-circle-check circle-uncolor "></i> Inventarios</p> <hr>
+                <p ><i class="fa-solid fa-circle-check circle-color "></i> Inventarios</p> <hr>
                 <p class="text-decoration-line-through"><i class="fa-solid fa-circle-check circle-uncolor "></i> App para Android</p> <hr>
                 <p class="text-decoration-line-through"><i class="fa-solid fa-circle-check circle-uncolor "></i> Emitir Guías</p> <hr>
                 <p class="text-decoration-line-through"><i class="fa-solid fa-circle-check circle-uncolor "></i> Comprobantes avanzados</p> <hr>
@@ -43,7 +43,7 @@ import Section from "../components/Section.astro";
                 <p class="text-decoration-line-through"><i class="fa-solid fa-circle-check circle-uncolor "></i> Contabilidad</p> <hr>
               </div>
 
-              <a class="btn btn-adquirir" target="_blank" href="https://api.whatsapp.com/send?phone=51990645449&text=Quiero el Plan Básico" role="button">Lo quiero</a>
+              <a class="btn btn-adquirir" target="_blank" rel="noopener noreferrer" href={`https://api.whatsapp.com/send?phone=${WHATSAPP_NUMBER}&text=Quiero el Plan Básico`} role="button">Lo quiero</a>
             </div>
           </div>
 
@@ -65,14 +65,14 @@ import Section from "../components/Section.astro";
                 <p><i class="fa-solid fa-circle-check circle-color"></i> 1200 CPE al mes</p> <hr>
                 <p><i class="fa-solid fa-circle-check circle-color"></i> App para Android</p> <hr>
                 <p><i class="fa-solid fa-circle-check circle-color"></i> Inventarios</p> <hr>
-                <p class="text-decoration-line-through"><i class="fa-solid fa-circle-check circle-uncolor "></i> Emitir Guías</p> <hr>
+                <p><i class="fa-solid fa-circle-check circle-color "></i> Emitir Guías</p> <hr>
                 <p class="text-decoration-line-through"><i class="fa-solid fa-circle-check circle-uncolor "></i> Comprobantes avanzados</p> <hr>
                 <p class="text-decoration-line-through"><i class="fa-solid fa-circle-check circle-uncolor "></i> Finanzas</p> <hr>
                 <p class="text-decoration-line-through"><i class="fa-solid fa-circle-check circle-uncolor "></i> Tienda Virtual</p> <hr>
                 <p class="text-decoration-line-through"><i class="fa-solid fa-circle-check circle-uncolor "></i> Contabilidad</p> <hr>
               </div>
 
-              <a class="btn btn-adquirir" target="_blank" href="https://api.whatsapp.com/send?phone=51990645449&text=Quiero el Plan Standar" role="button">Lo quiero</a>
+              <a class="btn btn-adquirir" target="_blank" rel="noopener noreferrer" href={`https://api.whatsapp.com/send?phone=${WHATSAPP_NUMBER}&text=Quiero el Plan Standar`} role="button">Lo quiero</a>
             </div>
           </div>
 
@@ -101,7 +101,7 @@ import Section from "../components/Section.astro";
                 <p><i class="fa-solid fa-circle-check circle-color "></i> Contabilidad</p> <hr>
               </div>
 
-              <a class="btn btn-adquirir" target="_blank" href="https://api.whatsapp.com/send?phone=51990645449&text=Quiero el Plan Premium" role="button">Lo quiero</a>
+              <a class="btn btn-adquirir" target="_blank" rel="noopener noreferrer" href={`https://api.whatsapp.com/send?phone=${WHATSAPP_NUMBER}&text=Quiero el Plan Premium`} role="button">Lo quiero</a>
             </div>
           </div>
 
@@ -115,7 +115,7 @@ import Section from "../components/Section.astro";
 
 
 
-    <Section title="Soporte OFITEC" background_color= {back_color_secondary} font_color="white">
+    <Section title="Soporte OFITEC" background_color={BACK_COLOR_SECONDARY} font_color="white">
       <div class="container">
         <p>Brindamos soporte constante y actualizaciones a todos nuestros clientes.
           Nuestros clientes satisfechos recomiendan nustros servicio y su actividad se ve reflejada en datos de trabajo constante</p>

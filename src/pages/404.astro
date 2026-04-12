@@ -1,0 +1,43 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Página no encontrada" description="La página que buscas no existe.">
+  <div class="not-found d-flex flex-column justify-content-center align-items-center text-center">
+    <h1 class="error-code">404</h1>
+    <h2 class="error-msg">Página no encontrada</h2>
+    <p>La dirección que buscas no existe o fue movida.</p>
+    <a href="/" class="btn btn-volver mt-3">Volver al Inicio</a>
+  </div>
+</Layout>
+
+<style>
+  .not-found {
+    min-height: 100vh;
+    padding: 2rem;
+  }
+
+  .error-code {
+    font-size: 8rem;
+    font-weight: bold;
+    color: rgb(52, 163, 110);
+    line-height: 1;
+  }
+
+  .error-msg {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .btn-volver {
+    background-color: rgb(55, 207, 134);
+    color: white;
+    font-size: 1.1rem;
+    padding: 0.6rem 2rem;
+  }
+
+  .btn-volver:hover {
+    background-color: rgb(48, 184, 118);
+    color: white;
+  }
+</style>

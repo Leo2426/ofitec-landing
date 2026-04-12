@@ -3,16 +3,15 @@ import Layout from "../layouts/Layout.astro"
 import Section from "../components/Section.astro"
 import Feature from "../components/Feature.astro"
 import Hero from "../components/Hero.astro"
-
-export const back_color_secondary = "rgb(48 48 68)"
+import { BACK_COLOR_SECONDARY } from "../config/constants"
 ---
 
-<Layout title="Ofitec">
+<Layout title="Inicio" description="Ofitec — Sistema de Facturación Electrónica para tu negocio en Perú. Emite boletas, facturas y notas de venta fácilmente. Prueba gratis.">
   
   <Hero background_image="/inicio.jpg">
     <h1 class="text-center titulo">Sistema de Facturación Electrónica</h1>
     <div class="container d-flex justify-content-center">
-      <a href="https://demo.ofitecfacturas.com/" target="_blank"><button data-bs-toggle="modal" data-bs-target="#exampleModal" type="button" class="btn-hero btn btn-success mx-auto">PROBAR SISTEMA GRATIS</button></a>
+      <a href="https://demo.facturaofitec.com/" target="_blank" rel="noopener noreferrer"><button data-bs-toggle="modal" data-bs-target="#exampleModal" type="button" class="btn-hero btn btn-success mx-auto">PROBAR SISTEMA GRATIS</button></a>
     </div>
 
 <!-- Modal -->
@@ -71,8 +70,9 @@ export const back_color_secondary = "rgb(48 48 68)"
     <div class="video-container">
       <iframe
           src="https://www.youtube.com/embed/9Rks0Gflci8"
-          title="YouTube video player"
+          title="Video demostrativo del sistema de facturación Ofitec"
           frameborder="0"
+          loading="lazy"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowfullscreen
       ></iframe>
@@ -81,7 +81,7 @@ export const back_color_secondary = "rgb(48 48 68)"
 
   </Section> 
   
-  <Section title="Fortalece tu Negocio" background_color = {back_color_secondary} font_color="white" >
+  <Section title="Fortalece tu Negocio" background_color={BACK_COLOR_SECONDARY} font_color="white" >
     
     <div class="container numeros-negocio">
       <div class="row">
@@ -114,75 +114,75 @@ export const back_color_secondary = "rgb(48 48 68)"
     <div class="container">
       <div class="row d-flex justify-content-center">
         <div class="col-5 logo-empresa d-flex justify-content-center align-items-center">
-          <img src="/Empresas/Trokelart.jpeg" alt="" class="img-fluid">
+          <img src="/Empresas/Trokelart.jpeg" alt="Trokelart" class="img-fluid" loading="lazy">
         </div>
         <div  class="col-5 logo-empresa d-flex justify-content-center align-items-center">
-          <img src="/Empresas/cool.png" alt="" class="img-fluid">
+          <img src="/Empresas/cool.png" alt="Cool" class="img-fluid" loading="lazy">
         </div>
         <div class="col-5 logo-empresa d-flex justify-content-center align-items-center">
-          <img src="/Empresas/Matprofer.JPG" alt="" class="img-fluid">
+          <img src="/Empresas/Matprofer.JPG" alt="Matprofer" class="img-fluid" loading="lazy">
         </div>
         <div class="col-5 logo-empresa d-flex justify-content-center align-items-center">
-          <img src="/Empresas/glasse.jpg" alt="" class="img-fluid">
+          <img src="/Empresas/glasse.jpg" alt="Glasse" class="img-fluid" loading="lazy">
         </div>
       <!--  Mostrar todas las imagenes-->
         <div class="col-5 logo-empresa d-flex justify-content-center align-items-center">
-          <img src="/Empresas/abast%20mc.jpg" alt="" class="img-fluid">
+          <img src="/Empresas/abast%20mc.jpg" alt="Abast MC" class="img-fluid" loading="lazy">
         </div>
 
         <div class="col-5 logo-empresa d-flex justify-content-center align-items-center">
-          <img src="/Empresas/aqua%20vit.jpg" alt="" class="img-fluid">
+          <img src="/Empresas/aqua%20vit.jpg" alt="Aqua Vit" class="img-fluid" loading="lazy">
         </div>
 
         <div class="col-5 logo-empresa d-flex justify-content-center align-items-center">
-          <img src="/Empresas/corazon.jpg" alt="" class="img-fluid">
+          <img src="/Empresas/corazon.jpg" alt="Corazon" class="img-fluid" loading="lazy">
         </div>
 
         <div class="col-5 logo-empresa d-flex justify-content-center align-items-center">
-          <img src="/Empresas/diracc.jpg" alt="" class="img-fluid">
+          <img src="/Empresas/diracc.jpg" alt="Diracc" class="img-fluid" loading="lazy">
         </div>
         <div class="col-5 logo-empresa d-flex justify-content-center align-items-center">
-          <img src="/Empresas/el%20dorado.jpg" alt="" class="img-fluid">
+          <img src="/Empresas/el%20dorado.jpg" alt="El Dorado" class="img-fluid" loading="lazy">
         </div>
         <div class="col-5 logo-empresa d-flex justify-content-center align-items-center">
-          <img src="/Empresas/el%20mirador.jpg" alt="" class="img-fluid">
+          <img src="/Empresas/el%20mirador.jpg" alt="El Mirador" class="img-fluid" loading="lazy">
         </div>
         <div class="col-5 logo-empresa d-flex justify-content-center align-items-center">
-          <img src="/Empresas/im.jpg" alt="" class="img-fluid">
-        </div>
-
-        <div class="col-5 logo-empresa d-flex justify-content-center align-items-center">
-          <img src="/Empresas/jireh.jpg" alt="" class="img-fluid">
+          <img src="/Empresas/im.jpg" alt="IM" class="img-fluid" loading="lazy">
         </div>
 
         <div class="col-5 logo-empresa d-flex justify-content-center align-items-center">
-          <img src="/Empresas/la%20botica.jpg" alt="" class="img-fluid">
-        </div>
-        <div class="col-5 logo-empresa d-flex justify-content-center align-items-center">
-          <img src="/Empresas/luy%20market.jpg" alt="" class="img-fluid">
-        </div>
-        <div class="col-5 logo-empresa d-flex justify-content-center align-items-center">
-          <img src="/Empresas/newid.jpg" alt="" class="img-fluid">
+          <img src="/Empresas/jireh.jpg" alt="Jireh" class="img-fluid" loading="lazy">
         </div>
 
         <div class="col-5 logo-empresa d-flex justify-content-center align-items-center">
-          <img src="/Empresas/panaderia.jpg" alt="" class="img-fluid">
+          <img src="/Empresas/la%20botica.jpg" alt="La Botica" class="img-fluid" loading="lazy">
+        </div>
+        <div class="col-5 logo-empresa d-flex justify-content-center align-items-center">
+          <img src="/Empresas/luy%20market.jpg" alt="Luy Market" class="img-fluid" loading="lazy">
+        </div>
+        <div class="col-5 logo-empresa d-flex justify-content-center align-items-center">
+          <img src="/Empresas/newid.jpg" alt="Newid" class="img-fluid" loading="lazy">
         </div>
 
         <div class="col-5 logo-empresa d-flex justify-content-center align-items-center">
-          <img src="/Empresas/arios.jpg" alt="" class="img-fluid">
+          <img src="/Empresas/panaderia.jpg" alt="Panadería" class="img-fluid" loading="lazy">
         </div>
 
         <div class="col-5 logo-empresa d-flex justify-content-center align-items-center">
-          <img src="/Empresas/firat.jpg" alt="" class="img-fluid">
+          <img src="/Empresas/arios.jpg" alt="Arios" class="img-fluid" loading="lazy">
         </div>
 
         <div class="col-5 logo-empresa d-flex justify-content-center align-items-center">
-          <img src="/Empresas/la%2039.jpg" alt="" class="img-fluid">
+          <img src="/Empresas/firat.jpg" alt="Firat" class="img-fluid" loading="lazy">
         </div>
 
         <div class="col-5 logo-empresa d-flex justify-content-center align-items-center">
-          <img src="/Empresas/sanfer.jpg" alt="" class="img-fluid">
+          <img src="/Empresas/la%2039.jpg" alt="La 39" class="img-fluid" loading="lazy">
+        </div>
+
+        <div class="col-5 logo-empresa d-flex justify-content-center align-items-center">
+          <img src="/Empresas/sanfer.jpg" alt="Sanfer" class="img-fluid" loading="lazy">
         </div>
 
       </div>
