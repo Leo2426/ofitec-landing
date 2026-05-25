@@ -1,144 +1,268 @@
 ---
 import Layout from "../layouts/Layout.astro"
-import { BACK_COLOR_SECONDARY } from "../config/constants";
 import Hero from "../components/Hero.astro";
 import Section from "../components/Section.astro";
-
 ---
 
 <Layout title="Nosotros" description="Conoce al equipo de Ofitec. Somos una empresa peruana dedicada a brindar sistemas digitales de facturación electrónica para negocios y emprendimientos.">
-    <Hero background_image= "/team.jpg">
-       <div class="container">
-        <h1 class="titulo">El mejor equipo a su servicio</h1>
-        <p class="parrafo">Contamos con un staff de profesionales para brindarle el mejor soporte para su empresa</p>
-       </div>
-    </Hero>
 
-    <Section title="Somos OFITEC" background_color={BACK_COLOR_SECONDARY} font_color="white">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 my-4 d-flex flex-column align-items-center">
-                    <h1 class="text-center" >Nuestra Empresa</h1>
-                    <p class="descripcion">Somos Ofitec una Empresa dedicada a brindar sistemas digitales para organizar y analizar la información de su emprendimiento o negocios de una forma sencilla y con un bajo costo. Además te
-                        brindamos accesorios para equipar tu negocio.</p>
-                        <i class="fas fa-computer-speaker"></i>
-                </div>
-                
-                <div class="col-12 my-4 d-flex flex-column align-items-center">
-                    <h1>Nuestra Misión</h1>
-                    <p class="descripcion">Ayudamos a emprendedores y negocios a crecer con tecnología accesible, brindando herramientas digitales que simplifican la gestión, automatizan procesos y permiten tomar mejores decisiones con información en tiempo real.</p>
-                        <i class="fas fa-globe-americas"></i>
-                </div>
-            </div>
+  <!-- ══ HERO ══ -->
+  <Hero background_image="/team.jpg">
+    <h1 class="hero-title">El mejor equipo a su servicio</h1>
+    <p class="hero-sub">Contamos con un staff de profesionales para brindarte el mejor soporte para tu empresa.</p>
+  </Hero>
+
+  <!-- ══ NUESTRA EMPRESA + MISIÓN ══ -->
+  <Section title="Somos OFITEC" eyebrow="Quiénes somos" dark={true}>
+    <div class="about-grid">
+      <div class="about-card">
+        <div class="about-card__icon"><i class="fa-solid fa-computer-speaker"></i></div>
+        <h3 class="about-card__title">Nuestra Empresa</h3>
+        <p>Somos Ofitec, una empresa dedicada a brindar sistemas digitales para organizar y analizar la información de tu emprendimiento o negocio de forma sencilla y con bajo costo. Además te brindamos accesorios para equipar tu negocio.</p>
+      </div>
+      <div class="about-card">
+        <div class="about-card__icon"><i class="fa-solid fa-globe-americas"></i></div>
+        <h3 class="about-card__title">Nuestra Misión</h3>
+        <p>Ayudamos a emprendedores y negocios a crecer con tecnología accesible, brindando herramientas digitales que simplifican la gestión, automatizan procesos y permiten tomar mejores decisiones con información en tiempo real.</p>
+      </div>
+    </div>
+  </Section>
+
+  <!-- ══ VALORES ══ -->
+  <section class="o-section o-section--subtle">
+    <div class="o-wrapper">
+      <div class="o-section-header">
+        <span class="o-section-header__eyebrow">Lo que nos define</span>
+        <h2 class="o-section-header__title">Nuestros Valores</h2>
+        <div class="o-section-header__divider"></div>
+      </div>
+
+      <div class="values-grid">
+        <div class="value-card">
+          <div class="value-card__icon"><i class="fa-solid fa-handshake-simple"></i></div>
+          <h3 class="value-card__title">Compromiso</h3>
+          <p class="value-card__desc">Nos comprometemos con el éxito de cada cliente, brindando acompañamiento continuo desde el primer día.</p>
         </div>
-    </Section>
-
-
-    <Section title="Nuestro Equipo">
-        <div class="container mt-5">
-            <div class="row">
-                <div class="col mb-5 d-flex flex-column align-items-center">
-                    <img src="/brian_fernandez.jpeg" class="imagen" alt="Brian Fernandez Medina — CEO" loading="lazy">
-                    <h1 class="nombre text-center">Brian Fernandez Medina</h1>
-                    <h2 class="cargo">CEO</h2>
-                </div>
-                <div class="col d-flex flex-column align-items-center">
-                    <img src="/luz_campos.jpeg" class="imagen" alt="Luz Marlene Campos González — Administradora" loading="lazy">
-                    <h1 class="nombre text-center">Luz Marlene Campos González</h1>
-                    <h2 class="cargo">Administradora</h2>
-                </div>
-            </div>
+        <div class="value-card">
+          <div class="value-card__icon"><i class="fa-solid fa-lightbulb"></i></div>
+          <h3 class="value-card__title">Innovación</h3>
+          <p class="value-card__desc">Actualizamos constantemente nuestra plataforma para que siempre cuentes con la mejor tecnología disponible.</p>
         </div>
-    </Section>
+        <div class="value-card">
+          <div class="value-card__icon"><i class="fa-solid fa-users"></i></div>
+          <h3 class="value-card__title">Cercanía</h3>
+          <p class="value-card__desc">Soporte humano, directo y en español. No bots, no tickets — una persona real que conoce tu negocio.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ EQUIPO ══ -->
+  <Section title="Nuestro Equipo" eyebrow="Las personas detrás de Ofitec">
+    <div class="team-grid">
+
+      <div class="team-card">
+        <div class="team-card__img-wrap">
+          <img src="/brian_fernandez.jpeg" class="team-card__img" alt="Brian Fernandez Medina — CEO" loading="lazy">
+        </div>
+        <div class="team-card__body">
+          <h3 class="team-card__name">Brian Fernandez Medina</h3>
+          <span class="team-card__role">CEO</span>
+        </div>
+      </div>
+
+      <div class="team-card">
+        <div class="team-card__img-wrap">
+          <img src="/luz_campos.jpeg" class="team-card__img" alt="Luz Marlene Campos González — Administradora" loading="lazy">
+        </div>
+        <div class="team-card__body">
+          <h3 class="team-card__name">Luz Marlene Campos González</h3>
+          <span class="team-card__role">Administradora</span>
+        </div>
+      </div>
+
+    </div>
+  </Section>
 
 </Layout>
 
-
 <style>
-
-.titulo{
-    color: white;
-    font-size: 5rem;
-    font-family: 'Open Sans', sans-serif
+  /* ── Hero ── */
+  .hero-title {
+    font-size: clamp(2.2rem, 5vw, 4rem);
+    font-weight: 800;
+    color: #fff;
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.1;
+    margin-bottom: 1rem;
   }
 
-  .parrafo{
-    margin-top: 1rem;
-    color: white;
-    font-size: 1.8rem;
+  .hero-sub {
+    font-size: 1.15rem;
+    color: rgba(255,255,255,0.85);
+    max-width: 520px;
+    line-height: 1.65;
+    margin: 0;
   }
 
-  i{
-    font-size: 10rem;
-    color: white;
+  /* ── Sobre nosotros (dark section) ── */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
   }
 
+  .about-card {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: var(--radius-md);
+    padding: 2rem;
+    transition: background var(--transition);
+  }
 
-  /* Nuestro Equipo */
+  .about-card:hover {
+    background: rgba(255,255,255,0.1);
+  }
 
-    .imagen{
-        width: 300px;
-        height: 300px;
-        border-radius: 50%;
-        /* Para que la imagen no se desproporcione */
-        object-fit: cover;
+  .about-card__icon {
+    font-size: 2.2rem;
+    color: var(--color-primary-light);
+    margin-bottom: 1rem;
+  }
+
+  .about-card__title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 0.6rem;
+  }
+
+  .about-card p {
+    font-size: 0.95rem;
+    color: rgba(255,255,255,0.65);
+    line-height: 1.7;
+    margin: 0;
+  }
+
+  /* ── Valores ── */
+  .values-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  .value-card {
+    background: var(--color-surface-0);
+    border: 1.5px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: 2rem 1.5rem;
+    text-align: center;
+    transition: border-color var(--transition), box-shadow var(--transition), transform var(--transition);
+  }
+
+  .value-card:hover {
+    border-color: var(--color-primary);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-4px);
+  }
+
+  .value-card__icon {
+    width: 60px;
+    height: 60px;
+    border-radius: var(--radius-md);
+    background: var(--color-primary-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: var(--color-primary);
+    margin: 0 auto 1.1rem;
+  }
+
+  .value-card__title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--color-text);
+    margin-bottom: 0.5rem;
+  }
+
+  .value-card__desc {
+    font-size: 0.92rem;
+    color: var(--color-text-muted);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  /* ── Equipo ── */
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    max-width: 680px;
+    margin: 0 auto;
+  }
+
+  .team-card {
+    background: var(--color-surface-0);
+    border: 1.5px solid var(--color-border);
+    border-top: 4px solid var(--color-primary);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    transition: box-shadow var(--transition), transform var(--transition);
+  }
+
+  .team-card:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-4px);
+  }
+
+  .team-card__img-wrap {
+    width: 100%;
+    aspect-ratio: 1;
+    overflow: hidden;
+  }
+
+  .team-card__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 400ms ease;
+  }
+
+  .team-card:hover .team-card__img {
+    transform: scale(1.04);
+  }
+
+  .team-card__body {
+    padding: 1.25rem 1.5rem 1.5rem;
+  }
+
+  .team-card__name {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--color-text);
+    margin-bottom: 0.3rem;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+  }
+
+  .team-card__role {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--color-primary);
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 768px) {
+    .about-grid {
+      grid-template-columns: 1fr;
     }
-
-    .nombre{
-        font-size: 1.8rem;
-        font-weight: bold;
-        margin-top: 1rem;
-        text-transform: uppercase;
+    .values-grid {
+      grid-template-columns: 1fr;
     }
-
-    .cargo{
-        font-size: 1.6rem;
-        font-weight: bold;
-        color: rgb(52, 163, 110);
+    .team-grid {
+      grid-template-columns: 1fr;
+      max-width: 340px;
     }
-
-    p{
-    font-size: 1.2rem;
-    
   }
-
-  .col p {
-    text-align: justify;
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
-
-  @media only screen and (max-width: 600px) {
-  .titulo{
-    font-size: 3rem;
-  }
-  .parrafo{
-    font-size: 1rem;
-  }
-
-  p{
-    font-size: 1rem;
-  }
-
-  .nombre{
-        font-size: 1.5rem;
-
-    }
-
-    .cargo{
-        font-size: 1.2rem;
-        color: rgb(52, 163, 110);
-    }
-
-    .imagen{
-        width: 200px;
-        height: 200px;
-    }
-    i{
-    font-size: 7rem;
-    color: white;
-  }
-
-
-}
 </style>

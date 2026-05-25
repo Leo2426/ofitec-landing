@@ -1,49 +1,184 @@
 ---
-import { WHATSAPP_NUMBER } from "../config/constants";
+import { LINK_WHATSAPP } from "../config/constants";
+const year = new Date().getFullYear();
 ---
 
-  <!-- Footer -->
-  <div class="container-fluid">
-    <footer class="px-5 py-5">
+<footer class="o-footer">
+  <div class="o-wrapper o-footer__grid">
 
-        <div class="container">
-            <div id="fila" class="row d-flex">
-                <div class="d-flex justify-content-center col-md-4 my-2  my-md-0">
-                    <img id="letras-footer" src="/Letras-Ofitec-Celestes.svg" class="img-fluid" alt="Ofitec">
-                </div>
+    <!-- Columna 1: Logo + descripción -->
+    <div class="o-footer__col o-footer__col--brand">
+      <a href="/" class="o-footer__brand">
+        <img src="/icono-ofitec-blanco.svg" alt="" width="36" height="36">
+        <img src="/Letras-Ofitec-Blanco.svg" alt="Ofitec" width="84">
+      </a>
+      <p class="o-footer__tagline">
+        Sistema de Facturación Electrónica para negocios y emprendimientos en Perú.
+      </p>
+    </div>
 
-                <div class="col-md-4 my-2  my-md-0 d-flex justify-content-evenly">
-                    <a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/Ofitec2020.Facturacionelectronica" class="text-muted" aria-label="Facebook de Ofitec"><i class="fab fa-facebook fa-2x"></i></a>
-                    <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/ofitec2020/" class="text-muted" aria-label="Instagram de Ofitec"><i class="fab fa-instagram fa-2x"></i></a>
-                    <a target="_blank" rel="noopener noreferrer" href="https://www.tiktok.com/@ofitec2020" class="text-muted" aria-label="TikTok de Ofitec"><i class="fab fa-tiktok fa-2x"></i></a>
-                    <a target="_blank" rel="noopener noreferrer" href={`https://api.whatsapp.com/send?phone=${WHATSAPP_NUMBER}`} class="text-muted" aria-label="WhatsApp de Ofitec"><i class="fab fa-whatsapp fa-2x"></i></a>
-                </div>
+    <!-- Columna 2: Navegación -->
+    <div class="o-footer__col">
+      <h3 class="o-footer__heading">Páginas</h3>
+      <ul class="o-footer__nav">
+        <li><a href="/">Inicio</a></li>
+        <li><a href="/nosotros">Nosotros</a></li>
+        <li><a href="/productos">Planes y Precios</a></li>
+      </ul>
+    </div>
 
-                <div class="col-md-4">
-                    <ul class="nav my-2  my-md-0 justify-content-center justify-content-md-end">
-                        <li class="nav-item"><a href="/" class="nav-link px-2 text-muted">Inicio</a></li>
-                        <li class="nav-item"><a href="/nosotros" class="nav-link px-2 text-muted">Nosotros</a></li>
-                        <li class="nav-item"><a href="/productos" class="nav-link px-2 text-muted">Productos</a></li>
-                    </ul>
-                </div>
-                
-            </div>
+    <!-- Columna 3: Redes sociales -->
+    <div class="o-footer__col">
+      <h3 class="o-footer__heading">Síguenos</h3>
+      <div class="o-footer__social">
+        <a href="https://www.facebook.com/Ofitec2020.Facturacionelectronica"
+           target="_blank" rel="noopener noreferrer"
+           aria-label="Facebook de Ofitec">
+          <i class="fab fa-facebook"></i>
+        </a>
+        <a href="https://www.instagram.com/ofitec2020/"
+           target="_blank" rel="noopener noreferrer"
+           aria-label="Instagram de Ofitec">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://www.tiktok.com/@ofitec2020"
+           target="_blank" rel="noopener noreferrer"
+           aria-label="TikTok de Ofitec">
+          <i class="fab fa-tiktok"></i>
+        </a>
 
-        </div>
+        <!-- LOGO WHATSAPP -->
+        <a href={LINK_WHATSAPP}
+           target="_blank" rel="noopener noreferrer"
+           aria-label="WhatsApp de Ofitec">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </div>
+    </div>
 
-    </footer>
   </div>
 
-  <style>
-    #letras-footer{
-        width: 50%;
-        margin-bottom: 1rem;
-    }        
-@media only screen and (max-width: 600px) {
-  li{
-    font-size: 0.8rem;
+  <!-- Línea de copyright -->
+  <div class="o-footer__bottom">
+    <div class="o-wrapper">
+      <span>&copy; {year} Ofitec. Todos los derechos reservados.</span>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .o-footer {
+    background: var(--color-surface-dark);
+    color: rgba(255, 255, 255, 0.75);
+    padding-top: 3.5rem;
   }
 
-}
+  /* ── Grid 3 columnas ── */
+  .o-footer__grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 2.5rem;
+    padding-bottom: 3rem;
+  }
 
-  </style>
+  /* ── Columna brand ── */
+  .o-footer__brand {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    margin-bottom: 1rem;
+  }
+
+  .o-footer__tagline {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.5);
+    line-height: 1.6;
+    max-width: 280px;
+    margin: 0;
+  }
+
+  /* ── Heading de columna ── */
+  .o-footer__heading {
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.4);
+    margin-bottom: 1rem;
+  }
+
+  /* ── Nav links ── */
+  .o-footer__nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .o-footer__nav a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    font-size: 0.93rem;
+    transition: color var(--transition);
+  }
+
+  .o-footer__nav a:hover {
+    color: var(--color-primary-light);
+  }
+
+  /* ── Social icons ── */
+  .o-footer__social {
+    display: flex;
+    gap: 0.75rem;
+  }
+
+  .o-footer__social a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.07);
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1rem;
+    text-decoration: none;
+    transition: background var(--transition), color var(--transition), transform var(--transition);
+  }
+
+  .o-footer__social a:hover {
+    background: var(--color-primary);
+    color: #fff;
+    transform: translateY(-2px);
+  }
+
+  /* ── Copyright ── */
+  .o-footer__bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 1.1rem 0;
+  }
+
+  .o-footer__bottom span {
+    font-size: 0.83rem;
+    color: rgba(255, 255, 255, 0.35);
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 768px) {
+    .o-footer__grid {
+      grid-template-columns: 1fr 1fr;
+    }
+    .o-footer__col--brand {
+      grid-column: 1 / -1;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .o-footer__grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

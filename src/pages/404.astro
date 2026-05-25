@@ -3,41 +3,98 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Página no encontrada" description="La página que buscas no existe.">
-  <div class="not-found d-flex flex-column justify-content-center align-items-center text-center">
-    <h1 class="error-code">404</h1>
-    <h2 class="error-msg">Página no encontrada</h2>
-    <p>La dirección que buscas no existe o fue movida.</p>
-    <a href="/" class="btn btn-volver mt-3">Volver al Inicio</a>
+  <div class="not-found">
+
+    <!-- Ilustración SVG inline -->
+    <div class="not-found__illustration" aria-hidden="true">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 320" fill="none">
+        <!-- Fondo suave -->
+        <ellipse cx="240" cy="290" rx="200" ry="24" fill="#e2e8f0" opacity="0.5"/>
+
+        <!-- Pantalla / monitor -->
+        <rect x="100" y="60" width="280" height="180" rx="16" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="2"/>
+        <rect x="115" y="75" width="250" height="145" rx="8" fill="#ffffff"/>
+
+        <!-- Cruz de error en pantalla -->
+        <circle cx="240" cy="147" r="44" fill="#fee2e2" stroke="#fca5a5" stroke-width="2"/>
+        <line x1="222" y1="129" x2="258" y2="165" stroke="#ef4444" stroke-width="5" stroke-linecap="round"/>
+        <line x1="258" y1="129" x2="222" y2="165" stroke="#ef4444" stroke-width="5" stroke-linecap="round"/>
+
+        <!-- Base del monitor -->
+        <rect x="215" y="240" width="50" height="14" rx="3" fill="#cbd5e1"/>
+        <rect x="195" y="252" width="90" height="10" rx="5" fill="#cbd5e1"/>
+
+        <!-- Texto 404 debajo de la pantalla -->
+        <text x="240" y="290" text-anchor="middle" font-family="'Open Sans', sans-serif"
+              font-weight="800" font-size="28" fill="#34a36e">404</text>
+
+        <!-- Partículas decorativas -->
+        <circle cx="90"  cy="90"  r="6" fill="#34a36e" opacity="0.25"/>
+        <circle cx="390" cy="80"  r="4" fill="#34a36e" opacity="0.2"/>
+        <circle cx="370" cy="200" r="5" fill="#34a36e" opacity="0.15"/>
+        <circle cx="70"  cy="190" r="4" fill="#34a36e" opacity="0.2"/>
+        <circle cx="130" cy="50"  r="3" fill="#34a36e" opacity="0.3"/>
+        <circle cx="340" cy="50"  r="3" fill="#34a36e" opacity="0.3"/>
+      </svg>
+    </div>
+
+    <h1 class="not-found__title">Página no encontrada</h1>
+    <p class="not-found__desc">La dirección que buscas no existe o fue movida a otro lugar.</p>
+
+    <div class="not-found__actions">
+      <a href="/" class="o-btn o-btn--primary o-btn--lg">
+        <i class="fa-solid fa-house"></i> Volver al Inicio
+      </a>
+      <a href="/productos" class="o-btn o-btn--outline o-btn--lg">
+        Ver Planes
+      </a>
+    </div>
+
   </div>
 </Layout>
 
 <style>
   .not-found {
     min-height: 100vh;
-    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem 1.5rem;
+    background: var(--color-surface-50);
   }
 
-  .error-code {
-    font-size: 8rem;
-    font-weight: bold;
-    color: rgb(52, 163, 110);
-    line-height: 1;
+  .not-found__illustration {
+    width: 100%;
+    max-width: 380px;
+    margin-bottom: 2rem;
   }
 
-  .error-msg {
-    font-size: 2rem;
-    margin-bottom: 1rem;
+  .not-found__illustration svg {
+    width: 100%;
+    height: auto;
   }
 
-  .btn-volver {
-    background-color: rgb(55, 207, 134);
-    color: white;
-    font-size: 1.1rem;
-    padding: 0.6rem 2rem;
+  .not-found__title {
+    font-size: clamp(1.6rem, 4vw, 2.4rem);
+    font-weight: 800;
+    color: var(--color-text);
+    margin-bottom: 0.75rem;
   }
 
-  .btn-volver:hover {
-    background-color: rgb(48, 184, 118);
-    color: white;
+  .not-found__desc {
+    font-size: 1rem;
+    color: var(--color-text-muted);
+    max-width: 380px;
+    margin: 0 auto 2rem;
+    line-height: 1.6;
+  }
+
+  .not-found__actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 </style>

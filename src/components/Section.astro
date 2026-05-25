@@ -1,40 +1,35 @@
 ---
-interface Props{
-    title: string
-    background_color?: string 
-    font_color?: string 
+interface Props {
+  title: string;
+  eyebrow?: string;
+  subtitle?: string;
+  dark?: boolean;
+  subtle?: boolean;
 }
-const background_color_default = "rgb(247 247 247)"
-const font_color_default = "black"
 
-const {title, background_color = background_color_default, font_color = font_color_default} = Astro.props
-
+const {
+  title,
+  eyebrow,
+  subtitle,
+  dark = false,
+  subtle = false,
+} = Astro.props;
 ---
 
-<section class="Section">
-    <div class="container d-flex flex-column align-items-center">
-      <h1 class="fw-bold text-center" >{title}</h1>
-      <hr>
-
-      <slot/>
-
+<section class:list={["o-section", { "o-section--dark": dark, "o-section--subtle": subtle }]}>
+  <div class="o-wrapper">
+    <div class="o-section-header">
+      {eyebrow && <span class="o-section-header__eyebrow">{eyebrow}</span>}
+      <h2 class:list={["o-section-header__title", { "o-section-header__title--light": dark }]}>
+        {title}
+      </h2>
+      <div class="o-section-header__divider"></div>
+      {subtitle && (
+        <p class:list={["o-section-header__subtitle", { "o-section-header__subtitle--light": dark }]}>
+          {subtitle}
+        </p>
+      )}
     </div>
-  </section>
-
-
-  <style define:vars={{ background_color , font_color}}>
-      .Section{
-        padding-top: 4rem;
-        padding-bottom: 4rem;
-        background-color: var(--background_color);
-        color: var(--font_color);
-      }
-
-      hr{
-        margin-top: 0.5rem;
-        border: 5px solid rgb(52, 163, 110);
-        width: 50%;
-        opacity: 1;
-      }
-      
-  </style>
+    <slot />
+  </div>
+</section>

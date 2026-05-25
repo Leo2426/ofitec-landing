@@ -3,276 +3,453 @@ import Layout from "../layouts/Layout.astro"
 import Section from "../components/Section.astro"
 import Feature from "../components/Feature.astro"
 import Hero from "../components/Hero.astro"
-import { BACK_COLOR_SECONDARY } from "../config/constants"
+import {URL_SISTEMA_PRUEBAS, CORREO_PRUEBA, CONTRASENA_PRUEBA} from "../config/constants"
 ---
 
 <Layout title="Inicio" description="Ofitec — Sistema de Facturación Electrónica para tu negocio en Perú. Emite boletas, facturas y notas de venta fácilmente. Prueba gratis.">
-  
-  <Hero background_image="/inicio.jpg">
-    <h1 class="text-center titulo">Sistema de Facturación Electrónica</h1>
-    <div class="container d-flex justify-content-center">
-      <a href="https://demo.facturaofitec.com/" target="_blank" rel="noopener noreferrer"><button data-bs-toggle="modal" data-bs-target="#exampleModal" type="button" class="btn-hero btn btn-success mx-auto">PROBAR SISTEMA GRATIS</button></a>
-    </div>
 
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">DATOS PARA INGRESAR</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <p><span style="font-weight: bold" >Correo: </span> demo@gmail.com </p>
-        <p><span style="font-weight: bold" >Contraseña: </span> 123456 </p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+  <!-- ══ HERO ══ -->
+  <Hero background_image="/inicio.jpg">
+    <h1 class="hero-title">Sistema de Facturación<br>Electrónica</h1>
+    <p class="hero-sub">Emite boletas, facturas y notas de venta en segundos.<br>Controla tu inventario y reportes desde cualquier lugar.</p>
+    <div class="hero-actions">
+      <button
+        data-bs-toggle="modal"
+        data-bs-target="#demoModal"
+        type="button"
+        class="o-btn o-btn--primary o-btn--lg">
+        <i class="fa-solid fa-play"></i> Probar sistema gratis
+      </button>
+      <a href="/productos" class="o-btn o-btn--ghost o-btn--lg">Ver planes</a>
+    </div>
+  </Hero>
+
+  <!-- Modal demo -->
+  <div class="modal fade" id="demoModal" tabindex="-1" aria-labelledby="demoModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header border-0 pb-0">
+          <h5 class="modal-title fw-bold" id="demoModalLabel">Datos para ingresar al demo</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body pt-2">
+          <div class="demo-field">
+            <div>
+              <p class="mb-1"><strong>Correo:</strong></p>
+              <div class="demo-value" data-copy={CORREO_PRUEBA}>
+                {CORREO_PRUEBA}
+                <i class="fa-solid fa-copy"></i>
+              </div>
+            </div>
+          </div>
+          <div class="demo-field">
+            <div>
+              <p class="mb-1"><strong>Contraseña:</strong></p>
+              <div class="demo-value" data-copy={CONTRASENA_PRUEBA}>
+                {CONTRASENA_PRUEBA}
+                <i class="fa-solid fa-copy"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer border-0">
+          <a href={URL_SISTEMA_PRUEBAS} target="_blank" class="o-btn o-btn--primary" >
+            <i class="fa-solid fa-arrow-up-right-from-square"></i> Ir al demo
+          </a>
+          <button type="button" class="o-btn o-btn--outline" data-bs-dismiss="modal">Cerrar</button>
+        </div>
       </div>
     </div>
   </div>
-</div>
-  </Hero>
 
+  <!-- ══ SECCIÓN: CONTROLA TU NEGOCIO ══ -->
   <Section title="Controla tu Negocio">
-
-    <div class="container">
-
-      <!-- Primera Fila -->
-      <div class="row justify-content-center">
-        <div class="col d-flex justify-content-center">
-          <Feature description="Agrega tu logo y tus datos para que salga en tus comprobantes" icon= "fa-solid fa-pen-paintbrush"> </Feature>
-        </div>
-        <div class="col d-flex justify-content-center ">
-          <Feature description="Obtén los datos de tus clientes solo con el número de documento" icon="fa-solid fa-user"></Feature>
-        </div>
-        <div class="col d-flex justify-content-center ">
-          <Feature description="Obtener reportes de los movimientos de tu negocio" icon="fa-solid fa-briefcase"></Feature>
-        </div>
-      </div>
-
-      
-      <!-- Segunda Fila -->
-      <div class="row justify-content-center">
-        <div class="col d-flex justify-content-center">
-          <Feature description="Usa tu propio certificado digital para enviar tus comprobantes a SUNAT" islocal = {true} icon_local="/sunat.svg"  ></Feature>
-        </div>
-        <div class="col d-flex justify-content-center ">
-          <Feature description="Imprime tus comprobantes en formato A4, A5, 80mm o 58mm" icon="fa-solid fa-print"></Feature>
-        </div>
-        <div class="col d-flex justify-content-center ">
-          <Feature description="Lleva el control de tu inventario, valores y stock de forma correcta" icon="fa-solid fa-boxes-stacked"></Feature>
-        </div>
-      </div>
-    </div>
-
-    <!-- insertar un video -->
-    <div class="video-container">
+    <div class="video-wrap">
       <iframe
-          src="https://www.youtube.com/embed/9Rks0Gflci8"
-          title="Video demostrativo del sistema de facturación Ofitec"
-          frameborder="0"
-          loading="lazy"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
+        src="https://www.youtube.com/embed/9Rks0Gflci8"
+        title="Video demostrativo del sistema de facturación Ofitec"
+        frameborder="0"
+        loading="lazy"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
       ></iframe>
     </div>
 
+    <div class="features-grid">
+      <Feature description="Agrega tu logo y tus datos para que salga en tus comprobantes" icon="fa-solid fa-pen-paintbrush" />
+      <Feature description="Obtén los datos de tus clientes solo con el número de documento" icon="fa-solid fa-user" />
+      <Feature description="Obtener reportes de los movimientos de tu negocio" icon="fa-solid fa-briefcase" />
+      <Feature description="Usa tu propio certificado digital para enviar tus comprobantes a SUNAT" islocal={true} icon_local="/sunat.svg" />
+      <Feature description="Imprime tus comprobantes en formato A4, A5, 80mm o 58mm" icon="fa-solid fa-print" />
+      <Feature description="Lleva el control de tu inventario, valores y stock de forma correcta" icon="fa-solid fa-boxes-stacked" />
+    </div>
+  </Section>
 
-  </Section> 
-  
-  <Section title="Fortalece tu Negocio" background_color={BACK_COLOR_SECONDARY} font_color="white" >
-    
-    <div class="container numeros-negocio">
-      <div class="row">
-        <div class="col-6  d-flex flex-column justify-content-center align-items-center">
-          <h1 class="fw-bold">500+</h1>
-          <p class="text-center" >Archivos generados</p>
+  <!-- ══ SECCIÓN: ¿POR QUÉ OFITEC? ══ -->
+  <section class="o-section o-section--subtle">
+    <div class="o-wrapper">
+      <div class="o-section-header">
+        <h2 class="o-section-header__title">¿Por qué elegir Ofitec?</h2>
+        <div class="o-section-header__divider"></div>
+        <p class="o-section-header__subtitle">Más que un sistema de facturación — una herramienta que hace crecer tu negocio.</p>
+      </div>
+
+      <div class="why-grid">
+        <div class="why-card">
+          <div class="why-card__icon"><i class="fa-solid fa-shield-check"></i></div>
+          <div>
+            <h3 class="why-card__title">100% validado por SUNAT</h3>
+            <p class="why-card__desc">Integración directa con SUNAT mediante certificado digital propio o nuestro OSE. Cumple con todos los requisitos legales vigentes.</p>
+          </div>
         </div>
-
-        <div class="col-6  d-flex flex-column justify-content-center align-items-center">
-          <h1 class="fw-bold" >100+</h1>
-          <p class="text-center" >Empresas trabajando</p>
+        <div class="why-card">
+          <div class="why-card__icon"><i class="fa-solid fa-gauge-high"></i></div>
+          <div>
+            <h3 class="why-card__title">Rápido y sin complicaciones</h3>
+            <p class="why-card__desc">Emite un comprobante en menos de 30 segundos. Interfaz intuitiva pensada para que cualquier persona la use desde el primer día.</p>
+          </div>
         </div>
-
-        <div class="col-6  d-flex flex-column justify-content-center align-items-center">
-          <h1 class="fw-bold">300+</h1>
-          <p  class="text-center" > Comprobantes emitidos</p>
-        </div>      
-      
-        <div class="col-6  d-flex flex-column justify-content-center align-items-center">
-          <h1 class="fw-bold" >1000+</h1>
-          <p class="text-center" >Notas de venta</p>
+        <div class="why-card">
+          <div class="why-card__icon"><i class="fa-solid fa-headset"></i></div>
+          <div>
+            <h3 class="why-card__title">Soporte personalizado</h3>
+            <p class="why-card__desc">Equipo humano disponible vía WhatsApp. Te acompañamos en la configuración inicial y en cada actualización del sistema.</p>
+          </div>
         </div>
       </div>
     </div>
-  
+  </section>
+
+  <!-- ══ SECCIÓN: STATS ══ -->
+  <Section title="Fortalece tu Negocio" dark={true}>
+    <div class="stats-grid">
+      <div class="stat-item">
+        <span class="stat-num">500+</span>
+        <span class="stat-lbl">Archivos generados</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">100+</span>
+        <span class="stat-lbl">Empresas trabajando</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">300+</span>
+        <span class="stat-lbl">Comprobantes emitidos</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">1000+</span>
+        <span class="stat-lbl">Notas de venta</span>
+      </div>
+    </div>
   </Section>
 
-
-  <Section title="Ellos ya confían en nosotros">
-    <div class="container">
-      <div class="row d-flex justify-content-center">
-        <div class="col-5 logo-empresa d-flex justify-content-center align-items-center">
-          <img src="/Empresas/Trokelart.jpeg" alt="Trokelart" class="img-fluid" loading="lazy">
-        </div>
-        <div  class="col-5 logo-empresa d-flex justify-content-center align-items-center">
-          <img src="/Empresas/cool.png" alt="Cool" class="img-fluid" loading="lazy">
-        </div>
-        <div class="col-5 logo-empresa d-flex justify-content-center align-items-center">
-          <img src="/Empresas/Matprofer.JPG" alt="Matprofer" class="img-fluid" loading="lazy">
-        </div>
-        <div class="col-5 logo-empresa d-flex justify-content-center align-items-center">
-          <img src="/Empresas/glasse.jpg" alt="Glasse" class="img-fluid" loading="lazy">
-        </div>
-      <!--  Mostrar todas las imagenes-->
-        <div class="col-5 logo-empresa d-flex justify-content-center align-items-center">
-          <img src="/Empresas/abast%20mc.jpg" alt="Abast MC" class="img-fluid" loading="lazy">
-        </div>
-
-        <div class="col-5 logo-empresa d-flex justify-content-center align-items-center">
-          <img src="/Empresas/aqua%20vit.jpg" alt="Aqua Vit" class="img-fluid" loading="lazy">
-        </div>
-
-        <div class="col-5 logo-empresa d-flex justify-content-center align-items-center">
-          <img src="/Empresas/corazon.jpg" alt="Corazon" class="img-fluid" loading="lazy">
-        </div>
-
-        <div class="col-5 logo-empresa d-flex justify-content-center align-items-center">
-          <img src="/Empresas/diracc.jpg" alt="Diracc" class="img-fluid" loading="lazy">
-        </div>
-        <div class="col-5 logo-empresa d-flex justify-content-center align-items-center">
-          <img src="/Empresas/el%20dorado.jpg" alt="El Dorado" class="img-fluid" loading="lazy">
-        </div>
-        <div class="col-5 logo-empresa d-flex justify-content-center align-items-center">
-          <img src="/Empresas/el%20mirador.jpg" alt="El Mirador" class="img-fluid" loading="lazy">
-        </div>
-        <div class="col-5 logo-empresa d-flex justify-content-center align-items-center">
-          <img src="/Empresas/im.jpg" alt="IM" class="img-fluid" loading="lazy">
-        </div>
-
-        <div class="col-5 logo-empresa d-flex justify-content-center align-items-center">
-          <img src="/Empresas/jireh.jpg" alt="Jireh" class="img-fluid" loading="lazy">
-        </div>
-
-        <div class="col-5 logo-empresa d-flex justify-content-center align-items-center">
-          <img src="/Empresas/la%20botica.jpg" alt="La Botica" class="img-fluid" loading="lazy">
-        </div>
-        <div class="col-5 logo-empresa d-flex justify-content-center align-items-center">
-          <img src="/Empresas/luy%20market.jpg" alt="Luy Market" class="img-fluid" loading="lazy">
-        </div>
-        <div class="col-5 logo-empresa d-flex justify-content-center align-items-center">
-          <img src="/Empresas/newid.jpg" alt="Newid" class="img-fluid" loading="lazy">
-        </div>
-
-        <div class="col-5 logo-empresa d-flex justify-content-center align-items-center">
-          <img src="/Empresas/panaderia.jpg" alt="Panadería" class="img-fluid" loading="lazy">
-        </div>
-
-        <div class="col-5 logo-empresa d-flex justify-content-center align-items-center">
-          <img src="/Empresas/arios.jpg" alt="Arios" class="img-fluid" loading="lazy">
-        </div>
-
-        <div class="col-5 logo-empresa d-flex justify-content-center align-items-center">
-          <img src="/Empresas/firat.jpg" alt="Firat" class="img-fluid" loading="lazy">
-        </div>
-
-        <div class="col-5 logo-empresa d-flex justify-content-center align-items-center">
-          <img src="/Empresas/la%2039.jpg" alt="La 39" class="img-fluid" loading="lazy">
-        </div>
-
-        <div class="col-5 logo-empresa d-flex justify-content-center align-items-center">
-          <img src="/Empresas/sanfer.jpg" alt="Sanfer" class="img-fluid" loading="lazy">
-        </div>
-
-      </div>
-
+  <!-- ══ SECCIÓN: CLIENTES ══ -->
+  <Section
+    title="Ellos ya confían en nosotros"
+    subtitle="Más de 100 empresas y emprendimientos en Perú usan Ofitec."
+  >
+    <div class="logos-grid">
+      <div class="logo-cell"><img src="/Empresas/Trokelart.jpeg"    alt="Trokelart"  loading="lazy"></div>
+      <div class="logo-cell"><img src="/Empresas/cool.png"          alt="Cool"       loading="lazy"></div>
+      <div class="logo-cell"><img src="/Empresas/Matprofer.JPG"     alt="Matprofer"  loading="lazy"></div>
+      <div class="logo-cell"><img src="/Empresas/glasse.jpg"        alt="Glasse"     loading="lazy"></div>
+      <div class="logo-cell"><img src="/Empresas/abast%20mc.jpg"    alt="Abast MC"   loading="lazy"></div>
+      <div class="logo-cell"><img src="/Empresas/aqua%20vit.jpg"    alt="Aqua Vit"   loading="lazy"></div>
+      <div class="logo-cell"><img src="/Empresas/corazon.jpg"       alt="Corazon"    loading="lazy"></div>
+      <div class="logo-cell"><img src="/Empresas/diracc.jpg"        alt="Diracc"     loading="lazy"></div>
+      <div class="logo-cell"><img src="/Empresas/el%20dorado.jpg"   alt="El Dorado"  loading="lazy"></div>
+      <div class="logo-cell"><img src="/Empresas/el%20mirador.jpg"  alt="El Mirador" loading="lazy"></div>
+      <div class="logo-cell"><img src="/Empresas/im.jpg"            alt="IM"         loading="lazy"></div>
+      <div class="logo-cell"><img src="/Empresas/jireh.jpg"         alt="Jireh"      loading="lazy"></div>
+      <div class="logo-cell"><img src="/Empresas/la%20botica.jpg"   alt="La Botica"  loading="lazy"></div>
+      <div class="logo-cell"><img src="/Empresas/luy%20market.jpg"  alt="Luy Market" loading="lazy"></div>
+      <div class="logo-cell"><img src="/Empresas/newid.jpg"         alt="Newid"      loading="lazy"></div>
+      <div class="logo-cell"><img src="/Empresas/panaderia.jpg"     alt="Panadería"  loading="lazy"></div>
+      <div class="logo-cell"><img src="/Empresas/arios.jpg"         alt="Arios"      loading="lazy"></div>
+      <div class="logo-cell"><img src="/Empresas/firat.jpg"         alt="Firat"      loading="lazy"></div>
+      <div class="logo-cell"><img src="/Empresas/la%2039.jpg"       alt="La 39"      loading="lazy"></div>
+      <div class="logo-cell"><img src="/Empresas/sanfer.jpg"        alt="Sanfer"     loading="lazy"></div>
     </div>
   </Section>
 
 </Layout>
 
-
-
-
-
-
 <style>
-
-  #uno{
-    background-color: blueviolet;
-  }
-  /* Hero */
-  .titulo{
-    color: white;
-    font-size: 5rem;
-    font-family: 'Open Sans', sans-serif
-  }
-
-  .btn-hero{
-    margin-top: 5rem;
-    font-size: 1.5rem;
-    padding: 0.8rem 2rem;
-  }
-
-
-/* Fortalece tu negocio */
-  .numeros-negocio{
-    margin-top: 2rem;
+  /* ── Hero content ── */
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.25);
+    color: #fff;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    padding: 0.35rem 0.9rem;
+    border-radius: 20px;
+    margin-bottom: 1.25rem;
   }
 
-  p{
-    font-size: 1.2rem;
+  .hero-title {
+    font-size: clamp(2.4rem, 5vw, 4.5rem);
+    font-weight: 800;
+    color: #fff;
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.1;
+    margin-bottom: 1rem;
   }
 
-  /* Ellos ya confian en nosotros */
-  .logo-empresa{
-    /* borde simple */
-    border: 2px solid #eaeaea; 
-    margin: 1rem;
-
-    background-color: rgb(255, 255, 255);
-    border-radius: 5px;
-    height: 8rem ;
+  .hero-sub {
+    font-size: 1.15rem;
+    color: rgba(255,255,255,0.85);
+    line-height: 1.65;
+    max-width: 520px;
+    margin-bottom: 2rem;
   }
 
-  .logo-empresa img{
-    max-height: 80%;
-  }
-  .video-container {
+  .hero-actions {
     display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  /* ── Video ── */
+  .video-wrap {
+    position: relative;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    aspect-ratio: 16/9;
+    box-shadow: var(--shadow-lg);
+    margin: 0 auto 2rem;
+  }
+
+  .video-wrap iframe {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+
+  /* ── ¿Por qué Ofitec? ── */
+  .why-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    max-width: 760px;
+    margin: 0 auto;
+  }
+
+  .why-card {
+    display: flex;
+    gap: 1.25rem;
+    align-items: flex-start;
+    background: var(--color-surface-0);
+    border: 1.5px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: 1.5rem;
+    transition: box-shadow var(--transition), border-color var(--transition);
+  }
+
+  .why-card:hover {
+    border-color: var(--color-primary);
+    box-shadow: var(--shadow-md);
+  }
+
+  .why-card__icon {
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    border-radius: var(--radius-sm);
+    background: var(--color-primary-bg);
+    display: flex;
+    align-items: center;
     justify-content: center;
-    width: 60vw;
-    height: 20vw;
-  }
-  .video-container iframe {
-    width: 100%;
-    height: auto;
-    max-width: 800px; /* Opcional: puedes ajustar el valor máximo */
+    font-size: 1.3rem;
+    color: var(--color-primary);
   }
 
-
-  @media only screen and (max-width: 600px) {
-  .titulo{
-    font-size: 3rem;
-  }
-  .btn-hero{
-    font-size: 1rem;
-    padding: 0.8rem 1rem;
+  .why-card__title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--color-text);
+    margin-bottom: 0.35rem;
   }
 
-  .logo-empresa{
-    /* borde simple */
-    margin: 0.5rem;
-
+  .why-card__desc {
+    font-size: 0.93rem;
+    color: var(--color-text-muted);
+    margin: 0;
+    line-height: 1.6;
   }
 
-  .video-container {
-    width: 100%;
-    height: 50vw;
+  /* ── Stats ── */
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
   }
 
+  .stat-item {
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: var(--radius-md);
+    padding: 2rem 1rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    transition: background var(--transition);
+  }
 
+  .stat-item:hover {
+    background: rgba(255,255,255,0.12);
+  }
+
+  .stat-num {
+    font-size: 2.6rem;
+    font-weight: 800;
+    color: var(--color-primary-light);
+    line-height: 1;
+  }
+
+  .stat-lbl {
+    font-size: 0.88rem;
+    color: rgba(255,255,255,0.6);
+  }
+
+  /* ── Logos grid ── */
+  .logos-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1rem;
+  }
+
+  .logo-cell {
+    border: 1.5px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    background: var(--color-surface-0);
+    height: 7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem;
+    overflow: hidden;
+    transition: border-color var(--transition), box-shadow var(--transition);
+  }
+
+  .logo-cell:hover {
+    border-color: var(--color-primary);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .logo-cell img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    filter: grayscale(1) opacity(0.65);
+    transition: filter var(--transition);
+  }
+
+  .logo-cell:hover img {
+    filter: grayscale(0) opacity(1);
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 900px) {
+    .features-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .stats-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .logos-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  @media (max-width: 600px) {
+    .hero-sub {
+      font-size: 1rem;
+    }
+    .features-grid {
+      grid-template-columns: 1fr;
+    }
+    .logos-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .stat-num {
+      font-size: 2rem;
+    }
+  }
+
+  /* ── Demo credentials ── */
+  .demo-field {
+    margin-bottom: 1.5rem;
+  }
+
+  .demo-field:last-child {
+    margin-bottom: 0;
+  }
+
+  .demo-value {
+    background: #f0f0f0;
+    border: 1.5px solid #d0d0d0;
+    border-radius: var(--radius-sm);
+    padding: 0.75rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: background-color var(--transition), border-color var(--transition), box-shadow var(--transition);
+    font-family: 'Courier New', monospace;
+    font-weight: 500;
+    color: #333;
+  }
+
+  .demo-value:hover {
+    background: #e8e8e8;
+    border-color: #b0b0b0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .demo-value i {
+    font-size: 0.9rem;
+    color: #666;
+    opacity: 0.7;
+    transition: opacity var(--transition);
+  }
+
+  .demo-value:hover i {
+    opacity: 1;
+  }
+
+  .demo-value.copied {
+    background: #d4edda;
+    border-color: #28a745;
+  }
+
+  .demo-value.copied i::before {
+    content: '\f05d';
   }
 </style>
 
+<script>
+  document.querySelectorAll('.demo-value').forEach(el => {
+    el.addEventListener('click', async () => {
+      const text = el.getAttribute('data-copy');
+      try {
+        await navigator.clipboard.writeText(text  || '');
+        el.classList.add('copied');
+        setTimeout(() => el.classList.remove('copied'), 2000);
+      } catch (err) {
+        console.error('Error al copiar:', err);
+      }
+    });
+  });
+</script>

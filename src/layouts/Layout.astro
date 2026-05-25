@@ -16,122 +16,310 @@ const {
 const canonicalURL = new URL(Astro.url.pathname, "https://ofitec.netlify.app");
 ---
 <!DOCTYPE html>
-  <html lang="esp">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="icon" href="/icono-ofitec-celeste.svg">
+<html lang="esp">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/icono-ofitec-celeste.svg">
 
-        <!-- SEO -->
-        <title>{title} | Ofitec</title>
-        <meta name="description" content={description}>
-        <link rel="canonical" href={canonicalURL}>
+    <!-- SEO -->
+    <title>{title} | Ofitec</title>
+    <meta name="description" content={description}>
+    <link rel="canonical" href={canonicalURL}>
 
-        <!-- Open Graph -->
-        <meta property="og:type" content="website">
-        <meta property="og:url" content={canonicalURL}>
-        <meta property="og:title" content={`${title} | Ofitec`}>
-        <meta property="og:description" content={description}>
-        <meta property="og:image" content="https://ofitec.netlify.app/icono-ofitec-celeste.svg">
-        <meta property="og:locale" content="es_PE">
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content={canonicalURL}>
+    <meta property="og:title" content={`${title} | Ofitec`}>
+    <meta property="og:description" content={description}>
+    <meta property="og:image" content="https://ofitec.netlify.app/icono-ofitec-celeste.svg">
+    <meta property="og:locale" content="es_PE">
 
-        <!-- Twitter Card -->
-        <meta name="twitter:card" content="summary">
-        <meta name="twitter:title" content={`${title} | Ofitec`}>
-        <meta name="twitter:description" content={description}>
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content={`${title} | Ofitec`}>
+    <meta name="twitter:description" content={description}>
 
-        <!-- Preconnect para CDNs -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <!-- Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
 
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v6.0.0-beta3/css/all.css">
+    <!-- Fonts: Inter 400/500/600/700 -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Open+Sans:wght@700;800&display=swap" rel="stylesheet">
 
-        <!-- Schema.org JSON-LD -->
-        <script type="application/ld+json">
-        {
-          "@context": "https://schema.org",
-          "@type": "SoftwareApplication",
-          "name": "Ofitec",
-          "applicationCategory": "BusinessApplication",
-          "description": "Sistema de Facturación Electrónica para negocios y emprendimientos en Perú",
-          "url": "https://ofitec.netlify.app",
-          "operatingSystem": "Web, Android",
-          "offers": {
-            "@type": "AggregateOffer",
-            "priceCurrency": "PEN",
-            "lowPrice": "50",
-            "highPrice": "120"
-          },
-          "provider": {
-            "@type": "Organization",
-            "name": "Ofitec",
-            "url": "https://ofitec.netlify.app",
-            "contactPoint": {
-              "@type": "ContactPoint",
-              "contactType": "customer support",
-              "availableLanguage": "Spanish"
-            }
-          }
-        }
-        </script>
-    </head>
-    <body>
-        <Navbar/>
-        <slot/>
-        <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
-        <a href={`https://wa.me/${WHATSAPP_NUMBER}/?text=Hola, estoy interesado en el sistema de facturación`} target="_blank" rel="noopener noreferrer" class="whatsapp-float" aria-label="Contactar por WhatsApp">
-          <div class="whatsapp-icon">
-            <i class="fab fa-whatsapp"></i>
-          </div>
-        </a>
-        <Footer></Footer>
-    </body>
-  </html>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
 
+    <!-- FontAwesome Pro -->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v6.0.0-beta3/css/all.css">
 
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Ofitec",
+      "applicationCategory": "BusinessApplication",
+      "description": "Sistema de Facturación Electrónica para negocios y emprendimientos en Perú",
+      "url": "https://ofitec.netlify.app",
+      "operatingSystem": "Web, Android",
+      "offers": {
+        "@type": "AggregateOffer",
+        "priceCurrency": "PEN",
+        "lowPrice": "50",
+        "highPrice": "120"
+      },
+      "provider": {
+        "@type": "Organization",
+        "name": "Ofitec",
+        "url": "https://ofitec.netlify.app"
+      }
+    }
+    </script>
+  </head>
+  <body>
+    <Navbar/>
+    <slot/>
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <a href={`https://wa.me/${WHATSAPP_NUMBER}/?text=Hola, estoy interesado en el sistema de facturación`} target="_blank" rel="noopener noreferrer" class="whatsapp-float" aria-label="Contactar por WhatsApp">
+      <div class="whatsapp-icon">
+        <i class="fab fa-whatsapp"></i>
+      </div>
+    </a>
+    <Footer/>
+  </body>
+</html>
 
+<style is:global>
+  /* ══════════════════════════════════════
+     DESIGN TOKENS — inspirado en PrimeNG Lara Light
+  ══════════════════════════════════════ */
+  :root {
+    /* Primario */
+    --color-primary:       #34a36e;
+    --color-primary-hover: #2d8f5f;
+    --color-primary-light: #37cf86;
+    --color-primary-bg:    rgba(52, 163, 110, 0.08);
 
+    /* Superficies */
+    --color-surface-0:    #ffffff;
+    --color-surface-50:   #f8fafc;
+    --color-surface-100:  #f1f5f9;
+    --color-surface-dark: #0f172a;
+    --color-surface-dark-2: #1e293b;
 
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Andika:wght@700&family=Inter&family=Open+Sans:wght@700&display=swap');
+    /* Texto */
+    --color-text:       #1e293b;
+    --color-text-muted: #64748b;
+    --color-text-light: #94a3b8;
 
-body{
+    /* Bordes */
+    --color-border:     #e2e8f0;
+    --color-border-hover: #cbd5e1;
+
+    /* Layout */
+    --max-width: 1140px;
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 16px;
+    --radius-xl: 24px;
+
+    /* Sombras */
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+    --shadow-md: 0 4px 16px rgba(0,0,0,0.08);
+    --shadow-lg: 0 8px 32px rgba(0,0,0,0.12);
+
+    /* Transición */
+    --transition: 200ms ease;
+  }
+
+  /* ══════════════════════════════════════
+     RESET Y BASE
+  ══════════════════════════════════════ */
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
     font-family: 'Inter', sans-serif;
-}
-p{
-    font-size: 1.2rem;
+    color: var(--color-text);
+    background: var(--color-surface-0);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
   }
 
-
-    /* Estilos para el botón flotante */
-    .whatsapp-float {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    z-index: 999;
+  p {
+    font-size: 1rem;
+    color: var(--color-text-muted);
+    line-height: 1.7;
   }
 
-  /* Estilos para el ícono de WhatsApp */
-  .whatsapp-icon {
-    display: block;
-    width: 60px;
-    height: 60px;
-    background-color: #25D366;
+  h1, h2, h3, h4, h5, h6 {
+    color: var(--color-text);
+    font-weight: 700;
+    line-height: 1.25;
+  }
+
+  /* ══════════════════════════════════════
+     UTILIDADES COMPARTIDAS
+  ══════════════════════════════════════ */
+  .o-wrapper {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  .o-section {
+    padding: 5rem 0;
+  }
+
+  .o-section--dark {
+    background: var(--color-surface-dark);
     color: #fff;
-    text-align: center;
-    line-height: 60px;
-    border-radius: 50%;
-    font-size: 24px;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s, transform 0.3s;
   }
 
-  /* Cambio de color y escala al pasar el cursor */
+  .o-section--subtle {
+    background: var(--color-surface-50);
+  }
+
+  .o-section-header {
+    text-align: center;
+    margin-bottom: 3.5rem;
+  }
+
+  .o-section-header__eyebrow {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-primary);
+    background: var(--color-primary-bg);
+    padding: 0.3rem 0.9rem;
+    border-radius: 20px;
+    margin-bottom: 0.75rem;
+  }
+
+  .o-section-header__title {
+    font-size: 2.25rem;
+    font-weight: 800;
+    color: var(--color-text);
+    margin-bottom: 0.5rem;
+  }
+
+  .o-section-header__title--light {
+    color: #fff;
+  }
+
+  .o-section-header__divider {
+    width: 48px;
+    height: 4px;
+    background: var(--color-primary);
+    border-radius: 2px;
+    margin: 0.75rem auto 1rem;
+  }
+
+  .o-section-header__subtitle {
+    font-size: 1.05rem;
+    color: var(--color-text-muted);
+    max-width: 560px;
+    margin: 0 auto;
+  }
+
+  .o-section-header__subtitle--light {
+    color: rgba(255,255,255,0.65);
+  }
+
+  /* ══════════════════════════════════════
+     BOTONES GLOBALES
+  ══════════════════════════════════════ */
+  .o-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.7rem 1.5rem;
+    border-radius: var(--radius-sm);
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
+    cursor: pointer;
+    border: none;
+  }
+
+  .o-btn--primary {
+    background: var(--color-primary);
+    color: #fff;
+  }
+
+  .o-btn--primary:hover {
+    background: var(--color-primary-hover);
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(52,163,110,0.35);
+  }
+
+  .o-btn--outline {
+    background: transparent;
+    color: var(--color-primary);
+    border: 1.5px solid var(--color-primary);
+  }
+
+  .o-btn--outline:hover {
+    background: var(--color-primary-bg);
+    color: var(--color-primary);
+    transform: translateY(-2px);
+  }
+
+  .o-btn--ghost {
+    background: rgba(255,255,255,0.12);
+    color: #fff;
+    border: 1.5px solid rgba(255,255,255,0.25);
+    backdrop-filter: blur(4px);
+  }
+
+  .o-btn--ghost:hover {
+    background: rgba(255,255,255,0.2);
+    color: #fff;
+    transform: translateY(-2px);
+  }
+
+  .o-btn--lg {
+    padding: 0.9rem 2rem;
+    font-size: 1.05rem;
+  }
+
+  /* ══════════════════════════════════════
+     WHATSAPP FLOAT
+  ══════════════════════════════════════ */
+  .whatsapp-float {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 9999;
+  }
+
+  .whatsapp-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    background: #25D366;
+    color: #fff;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    box-shadow: 0 4px 16px rgba(37,211,102,0.4);
+    transition: background var(--transition), transform var(--transition);
+  }
+
   .whatsapp-icon:hover {
-    background-color: #128C7E;
+    background: #1ebe5d;
     transform: scale(1.1);
   }
-
 </style>

@@ -1,28 +1,58 @@
 ---
-interface  Props{
-    background_image: string
+interface Props {
+  background_image: string;
 }
-const {background_image} = Astro.props
-const complete = "url(" + background_image + ")"
+const { background_image } = Astro.props;
+const bgVar = `url(${background_image})`;
 ---
 
-<div class="container-fluid hero d-flex flex-column justify-content-center">
-    <slot/>
-</div>
+<section class="o-hero" style={`--hero-bg: url(${background_image})`}>
+  <div class="o-hero__overlay"></div>
+  <div class="o-wrapper o-hero__content">
+    <slot />
+  </div>
+</section>
 
-<style define:vars= {{complete}}>
-    .hero{
-      height: 100vh;
-      background-image: var(--complete);
-      background-repeat: no-repeat;
-      background-attachment: fixed;
-      background-position: center;
-      background-size: cover;
-    }
+<style>
+  .o-hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background-image: var(--hero-bg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+  }
 
-    @media only screen and (max-width: 768px) {
-      .hero {
-        background-attachment: scroll;
-      }
+  /* Overlay degradado oscuro para legibilidad */
+  .o-hero__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      135deg,
+      rgba(15, 23, 42, 0.72) 0%,
+      rgba(15, 23, 42, 0.45) 60%,
+      rgba(15, 23, 42, 0.3) 100%
+    );
+  }
+
+  .o-hero__content {
+    position: relative;
+    z-index: 1;
+    padding-top: 7rem;   /* espacio para la navbar fixed */
+    padding-bottom: 5rem;
+    width: 100%;
+  }
+
+  @media (max-width: 768px) {
+    .o-hero {
+      background-attachment: scroll;
     }
+    .o-hero__content {
+      padding-top: 6rem;
+      padding-bottom: 3rem;
+    }
+  }
 </style>

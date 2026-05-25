@@ -1,277 +1,510 @@
 ---
 import Layout from "../layouts/Layout.astro"
-import { BACK_COLOR_SECONDARY, WHATSAPP_NUMBER } from "../config/constants";
+import { WHATSAPP_NUMBER } from "../config/constants";
 import Hero from "../components/Hero.astro";
-import Section from "../components/Section.astro";
 ---
 
 <Layout title="Planes y Precios" description="Conoce los planes de Ofitec: Básico, Standar y Premium. Facturación electrónica desde S/. 50 al mes. Elige el plan que se adapta a tu negocio.">
-    <Hero background_image= "/planes.jpg">
-        <div class="container">
-            <h1 class="titulo">Planes que se adaptan a tu medida</h1>
-            <p class="parrafo">Revisa nuestros planes y elige el que mas se adecúe a tu negocio, recuerda que estos son escalables sin costo adicional</p>
-           </div>
-    </Hero>
 
-    <Section title="Planes">
-      <div class="container">
-        <div class="row">
+  <!-- ══ HERO ══ -->
+  <Hero background_image="/planes.jpg">
+    <h1 class="hero-title">Planes que se adaptan<br>a tu medida</h1>
+    <p class="hero-sub">Revisa nuestros planes y elige el que más se adecúe a tu negocio. Son escalables sin costo adicional.</p>
+  </Hero>
 
-
-          <!-- PLan Basico -->
-          <div class="col">
-            <div class="card-plan">
-              <h4 class="encabezado">Básico</h4>
-              <h1 class="precio fw-bold">s/.50 <span class="mes">/mes</span></h1>
-              <h1 class="precio-anual fw-bold">s/. 420 <span class="anual">/anual</span></h1>
-              <p class="descripcion">El plan que te ayuda crecer y organizar mejor tu negocio</p>
-
-              <div class="content">
-                <p><i class="fa-solid fa-circle-check circle-color"></i> Ventas</p> <hr>
-                <p><i class="fa-solid fa-circle-check circle-color"></i> Compras</p> <hr>
-                <p><i class="fa-solid fa-circle-check circle-color"></i> POS</p> <hr>
-                <p><i class="fa-solid fa-circle-check circle-color"></i> Reportes</p> <hr>
-                <p><i class="fa-solid fa-circle-check circle-color"></i> Productos</p> <hr>
-                <p><i class="fa-solid fa-circle-check circle-color"></i> 2 usuario / 1 local</p> <hr>
-                <p><i class="fa-solid fa-circle-check circle-color"></i> 700 CPE al mes</p> <hr>
-                <p ><i class="fa-solid fa-circle-check circle-color "></i> Inventarios</p> <hr>
-                <p class="text-decoration-line-through"><i class="fa-solid fa-circle-check circle-uncolor "></i> App para Android</p> <hr>
-                <p class="text-decoration-line-through"><i class="fa-solid fa-circle-check circle-uncolor "></i> Emitir Guías</p> <hr>
-                <p class="text-decoration-line-through"><i class="fa-solid fa-circle-check circle-uncolor "></i> Comprobantes avanzados</p> <hr>
-                <p class="text-decoration-line-through"><i class="fa-solid fa-circle-check circle-uncolor "></i> Finanzas</p> <hr>
-                <p class="text-decoration-line-through"><i class="fa-solid fa-circle-check circle-uncolor "></i> Tienda Virtual</p> <hr>
-                <p class="text-decoration-line-through"><i class="fa-solid fa-circle-check circle-uncolor "></i> Contabilidad</p> <hr>
-              </div>
-
-              <a class="btn btn-adquirir" target="_blank" rel="noopener noreferrer" href={`https://api.whatsapp.com/send?phone=${WHATSAPP_NUMBER}&text=Quiero el Plan Básico`} role="button">Lo quiero</a>
-            </div>
-          </div>
-
-          <!-- Plan Standar -->
-          <div class="col">
-            <div class="card-plan standar">
-              <h4 class="encabezado">Standar</h4>
-              <h1 class="precio fw-bold">s/.80 <span class="mes">/mes</span></h1>
-              <h1 class="precio-anual fw-bold">s/. 780 <span class="anual">/anual</span></h1>
-              <p class="descripcion">Automatiza tu negocio y controla tus actividades</p>
-
-              <div class="content">
-                <p><i class="fa-solid fa-circle-check circle-color"></i> Ventas</p> <hr>
-                <p><i class="fa-solid fa-circle-check circle-color"></i> Compras</p> <hr>
-                <p><i class="fa-solid fa-circle-check circle-color"></i> POS</p> <hr>
-                <p><i class="fa-solid fa-circle-check circle-color"></i> Reportes</p> <hr>
-                <p><i class="fa-solid fa-circle-check circle-color"></i> Productos</p> <hr>
-                <p><i class="fa-solid fa-circle-check circle-color"></i> 4 usuario / 3 locales</p> <hr>
-                <p><i class="fa-solid fa-circle-check circle-color"></i> 1200 CPE al mes</p> <hr>
-                <p><i class="fa-solid fa-circle-check circle-color"></i> App para Android</p> <hr>
-                <p><i class="fa-solid fa-circle-check circle-color"></i> Inventarios</p> <hr>
-                <p><i class="fa-solid fa-circle-check circle-color "></i> Emitir Guías</p> <hr>
-                <p class="text-decoration-line-through"><i class="fa-solid fa-circle-check circle-uncolor "></i> Comprobantes avanzados</p> <hr>
-                <p class="text-decoration-line-through"><i class="fa-solid fa-circle-check circle-uncolor "></i> Finanzas</p> <hr>
-                <p class="text-decoration-line-through"><i class="fa-solid fa-circle-check circle-uncolor "></i> Tienda Virtual</p> <hr>
-                <p class="text-decoration-line-through"><i class="fa-solid fa-circle-check circle-uncolor "></i> Contabilidad</p> <hr>
-              </div>
-
-              <a class="btn btn-adquirir" target="_blank" rel="noopener noreferrer" href={`https://api.whatsapp.com/send?phone=${WHATSAPP_NUMBER}&text=Quiero el Plan Standar`} role="button">Lo quiero</a>
-            </div>
-          </div>
-
-          <!-- Plan Premium -->
-          <div class="col">
-            <div class="card-plan">
-              <h4 class="encabezado">Premium</h4>
-              <h1 class="precio fw-bold">s/.120 <span class="mes">/mes</span></h1>
-              <h1 class="precio-anual fw-bold">s/. 1260 <span class="anual">/anual</span></h1>
-              <p class="descripcion">Un plan que te permite tener tu negocio automatizado sin límites</p>
-
-              <div class="content">
-                <p><i class="fa-solid fa-circle-check circle-color"></i> Ventas</p> <hr>
-                <p><i class="fa-solid fa-circle-check circle-color"></i> Compras</p> <hr>
-                <p><i class="fa-solid fa-circle-check circle-color"></i> POS</p> <hr>
-                <p><i class="fa-solid fa-circle-check circle-color"></i> Reportes</p> <hr>
-                <p><i class="fa-solid fa-circle-check circle-color"></i> Productos</p> <hr>
-                <p><i class="fa-solid fa-circle-check circle-color"></i> Usuarios y locales ilimitados</p> <hr>
-                <p><i class="fa-solid fa-circle-check circle-color"></i> Comprobantes ilimitados</p> <hr>
-                <p><i class="fa-solid fa-circle-check circle-color"></i> App para Android</p> <hr>
-                <p><i class="fa-solid fa-circle-check circle-color"></i> Inventarios</p> <hr>
-                <p><i class="fa-solid fa-circle-check circle-color "></i> Emitir Guías</p> <hr>
-                <p><i class="fa-solid fa-circle-check circle-color "></i> Comprobantes avanzados</p> <hr>
-                <p><i class="fa-solid fa-circle-check circle-color "></i> Finanzas</p> <hr>
-                <p><i class="fa-solid fa-circle-check circle-color "></i> Tienda Virtual</p> <hr>
-                <p><i class="fa-solid fa-circle-check circle-color "></i> Contabilidad</p> <hr>
-              </div>
-
-              <a class="btn btn-adquirir" target="_blank" rel="noopener noreferrer" href={`https://api.whatsapp.com/send?phone=${WHATSAPP_NUMBER}&text=Quiero el Plan Premium`} role="button">Lo quiero</a>
-            </div>
-          </div>
-
-        </div>
-      
+  <!-- ══ PLANES ══ -->
+  <section class="o-section o-section--subtle">
+    <div class="o-wrapper">
+      <div class="o-section-header">
+        <span class="o-section-header__eyebrow">Precios</span>
+        <h2 class="o-section-header__title">Planes</h2>
+        <div class="o-section-header__divider"></div>
+        <p class="o-section-header__subtitle">Elige el plan ideal para tu negocio. Sin permanencia, cancela cuando quieras.</p>
       </div>
 
+      <div class="planes-grid">
 
-
-    </Section>
-
-
-
-    <Section title="Soporte OFITEC" background_color={BACK_COLOR_SECONDARY} font_color="white">
-      <div class="container">
-        <p>Brindamos soporte constante y actualizaciones a todos nuestros clientes.
-          Nuestros clientes satisfechos recomiendan nustros servicio y su actividad se ve reflejada en datos de trabajo constante</p>
-          
-          <div class="d-flex flex-column align-items-center">
-            <i class="fa-solid fa-headset"></i>
+        <!-- Plan Básico -->
+        <div class="plan-card">
+          <div class="plan-badge">Básico</div>
+          <div class="plan-header">
+            <div class="plan-icon"><i class="fa-solid fa-seedling"></i></div>
+            <div class="plan-price">
+              <span class="price-amount">S/. 50</span>
+              <span class="price-period">/mes</span>
+            </div>
+            <div class="price-annual">S/. 420 <span>/año</span></div>
+            <p class="plan-desc">El plan que te ayuda a crecer y organizar mejor tu negocio</p>
           </div>
-
-          <div class="row">
-            <div class="col d-flex flex-column align-items-center">
-              <h1 class="numeros">500+</h1>
-              <p class="text-center" >Archivos generados</p>
-            </div>
-
-            <div class="col d-flex flex-column align-items-center">
-              <h1 class="numeros">20+</h1>
-              <p class="text-center">Empresas trabajando</p>
-            </div>
-
-            <div class="col d-flex flex-column align-items-center">
-              <h1 class="numeros">300+</h1>
-              <p class="text-center"> Comprobantes emitidos</p>
-            </div>
-
-            <div class="col d-flex flex-column align-items-center">
-              <h1 class="numeros">1000+</h1>
-              <p class="text-center">Notas de venta</p>
-            </div>
-
-
-          </div>
+          <ul class="feature-list">
+            <li class="feature-item active"><i class="fa-solid fa-check"></i> Ventas</li>
+            <li class="feature-item active"><i class="fa-solid fa-check"></i> Compras</li>
+            <li class="feature-item active"><i class="fa-solid fa-check"></i> POS</li>
+            <li class="feature-item active"><i class="fa-solid fa-check"></i> Reportes</li>
+            <li class="feature-item active"><i class="fa-solid fa-check"></i> Productos</li>
+            <li class="feature-item active"><i class="fa-solid fa-check"></i> 2 usuarios / 1 local</li>
+            <li class="feature-item active"><i class="fa-solid fa-check"></i> 700 CPE al mes</li>
+            <li class="feature-item active"><i class="fa-solid fa-check"></i> Inventarios</li>
+            <li class="feature-item inactive"><i class="fa-solid fa-xmark"></i> App para Android</li>
+            <li class="feature-item inactive"><i class="fa-solid fa-xmark"></i> Emitir Guías</li>
+            <li class="feature-item inactive"><i class="fa-solid fa-xmark"></i> Comprobantes avanzados</li>
+            <li class="feature-item inactive"><i class="fa-solid fa-xmark"></i> Finanzas</li>
+            <li class="feature-item inactive"><i class="fa-solid fa-xmark"></i> Tienda Virtual</li>
+            <li class="feature-item inactive"><i class="fa-solid fa-xmark"></i> Contabilidad</li>
+          </ul>
+          <a class="btn-plan" target="_blank" rel="noopener noreferrer" href={`https://api.whatsapp.com/send?phone=${WHATSAPP_NUMBER}&text=Quiero el Plan Básico`}>
+            <i class="fa-brands fa-whatsapp"></i> Lo quiero
+          </a>
         </div>
-    </Section>
+
+        <!-- Plan Standar — destacado -->
+        <div class="plan-card plan-featured">
+          <div class="plan-popular-tag">Más popular</div>
+          <div class="plan-badge featured-badge">Standar</div>
+          <div class="plan-header">
+            <div class="plan-icon featured-icon"><i class="fa-solid fa-rocket"></i></div>
+            <div class="plan-price">
+              <span class="price-amount">S/. 80</span>
+              <span class="price-period">/mes</span>
+            </div>
+            <div class="price-annual">S/. 780 <span>/año</span></div>
+            <p class="plan-desc">Automatiza tu negocio y controla todas tus actividades</p>
+          </div>
+          <ul class="feature-list">
+            <li class="feature-item active"><i class="fa-solid fa-check"></i> Ventas</li>
+            <li class="feature-item active"><i class="fa-solid fa-check"></i> Compras</li>
+            <li class="feature-item active"><i class="fa-solid fa-check"></i> POS</li>
+            <li class="feature-item active"><i class="fa-solid fa-check"></i> Reportes</li>
+            <li class="feature-item active"><i class="fa-solid fa-check"></i> Productos</li>
+            <li class="feature-item active"><i class="fa-solid fa-check"></i> 4 usuarios / 3 locales</li>
+            <li class="feature-item active"><i class="fa-solid fa-check"></i> 1200 CPE al mes</li>
+            <li class="feature-item active"><i class="fa-solid fa-check"></i> App para Android</li>
+            <li class="feature-item active"><i class="fa-solid fa-check"></i> Inventarios</li>
+            <li class="feature-item active"><i class="fa-solid fa-check"></i> Emitir Guías</li>
+            <li class="feature-item inactive"><i class="fa-solid fa-xmark"></i> Comprobantes avanzados</li>
+            <li class="feature-item inactive"><i class="fa-solid fa-xmark"></i> Finanzas</li>
+            <li class="feature-item inactive"><i class="fa-solid fa-xmark"></i> Tienda Virtual</li>
+            <li class="feature-item inactive"><i class="fa-solid fa-xmark"></i> Contabilidad</li>
+          </ul>
+          <a class="btn-plan btn-plan-featured" target="_blank" rel="noopener noreferrer" href={`https://api.whatsapp.com/send?phone=${WHATSAPP_NUMBER}&text=Quiero el Plan Standar`}>
+            <i class="fa-brands fa-whatsapp"></i> Lo quiero
+          </a>
+        </div>
+
+        <!-- Plan Premium -->
+        <div class="plan-card plan-premium">
+          <div class="plan-badge premium-badge">Premium</div>
+          <div class="plan-header">
+            <div class="plan-icon premium-icon"><i class="fa-solid fa-crown"></i></div>
+            <div class="plan-price">
+              <span class="price-amount">S/. 120</span>
+              <span class="price-period">/mes</span>
+            </div>
+            <div class="price-annual">S/. 1,260 <span>/año</span></div>
+            <p class="plan-desc">Tu negocio completamente automatizado, sin límites</p>
+          </div>
+          <ul class="feature-list">
+            <li class="feature-item active"><i class="fa-solid fa-check"></i> Ventas</li>
+            <li class="feature-item active"><i class="fa-solid fa-check"></i> Compras</li>
+            <li class="feature-item active"><i class="fa-solid fa-check"></i> POS</li>
+            <li class="feature-item active"><i class="fa-solid fa-check"></i> Reportes</li>
+            <li class="feature-item active"><i class="fa-solid fa-check"></i> Productos</li>
+            <li class="feature-item active"><i class="fa-solid fa-check"></i> Usuarios y locales ilimitados</li>
+            <li class="feature-item active"><i class="fa-solid fa-check"></i> Comprobantes ilimitados</li>
+            <li class="feature-item active"><i class="fa-solid fa-check"></i> App para Android</li>
+            <li class="feature-item active"><i class="fa-solid fa-check"></i> Inventarios</li>
+            <li class="feature-item active"><i class="fa-solid fa-check"></i> Emitir Guías</li>
+            <li class="feature-item active"><i class="fa-solid fa-check"></i> Comprobantes avanzados</li>
+            <li class="feature-item active"><i class="fa-solid fa-check"></i> Finanzas</li>
+            <li class="feature-item active"><i class="fa-solid fa-check"></i> Tienda Virtual</li>
+            <li class="feature-item active"><i class="fa-solid fa-check"></i> Contabilidad</li>
+          </ul>
+          <a class="btn-plan btn-plan-premium" target="_blank" rel="noopener noreferrer" href={`https://api.whatsapp.com/send?phone=${WHATSAPP_NUMBER}&text=Quiero el Plan Premium`}>
+            <i class="fa-brands fa-whatsapp"></i> Lo quiero
+          </a>
+        </div>
+
+      </div>
+
+      <!-- Nota al pie -->
+      <div class="planes-nota">
+        <i class="fa-solid fa-circle-info"></i>
+        Todos los planes incluyen soporte técnico y actualizaciones. ¿Tienes dudas?
+        <a href={`https://api.whatsapp.com/send?phone=${WHATSAPP_NUMBER}&text=Tengo una consulta sobre los planes`} target="_blank" rel="noopener noreferrer">Escríbenos</a>.
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ SOPORTE + STATS ══ -->
+  <section class="o-section o-section--dark">
+    <div class="o-wrapper">
+      <div class="o-section-header">
+        <span class="o-section-header__eyebrow">Confiabilidad</span>
+        <h2 class="o-section-header__title o-section-header__title--light">Soporte OFITEC</h2>
+        <div class="o-section-header__divider"></div>
+        <p class="o-section-header__subtitle o-section-header__subtitle--light">Brindamos soporte constante y actualizaciones a todos nuestros clientes.</p>
+      </div>
+
+      <div class="soporte-icon">
+        <i class="fa-solid fa-headset"></i>
+      </div>
+
+      <div class="stats-grid">
+        <div class="stat-card">
+          <span class="stat-number">500+</span>
+          <span class="stat-label">Archivos generados</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number">20+</span>
+          <span class="stat-label">Empresas trabajando</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number">300+</span>
+          <span class="stat-label">Comprobantes emitidos</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number">1000+</span>
+          <span class="stat-label">Notas de venta</span>
+        </div>
+      </div>
+    </div>
+  </section>
 
 </Layout>
 
-
 <style>
-    .titulo{
-    color: white;
-    font-size: 5rem;
-    font-family: 'Open Sans', sans-serif
-  }
-
-  .parrafo{
-    margin-top: 1rem;
-    color: white;
-    font-size: 1.8rem;
-  }
-
-
-  /* PLan */
-
-  .encabezado{
-    margin-top: 0.5rem;
-    margin-bottom: 0.8rem;
-    color: rgb(52, 163, 110);
-    font-size: 1rem;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 0.2rem
-  }
-
-  .mes{
-    font-size: 1.2rem;
-    color: dimgrey;
-  }
-
-  .anual{
+  /* ── Hero ── */
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.25);
+    color: #fff;
     font-size: 0.8rem;
-    color: dimgrey;
-    color: rgb(52, 163, 110);
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    padding: 0.35rem 0.9rem;
+    border-radius: 20px;
+    margin-bottom: 1.25rem;
   }
 
-  .precio-anual{
-    font-size: 1rem;
-    color: rgb(52, 163, 110);
-    transform: translateY(-0.3rem);
-
+  .hero-title {
+    font-size: clamp(2.2rem, 5vw, 4rem);
+    font-weight: 800;
+    color: #fff;
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.1;
+    margin-bottom: 1rem;
   }
 
-  .descripcion{
-    margin-bottom: 1.8rem;
+  .hero-sub {
+    font-size: 1.1rem;
+    color: rgba(255,255,255,0.85);
+    max-width: 560px;
+    line-height: 1.65;
+    margin: 0;
   }
 
-  .card-plan{
-    background-color: rgb(255, 255, 255);
-    border-radius: 10px;
-    padding: 2rem;
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  /* ── Grid de planes ── */
+  .planes-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    align-items: start;
   }
 
-  .btn-adquirir{
-    background-color:  rgb(55, 207, 134);
+  /* ── Card base ── */
+  .plan-card {
+    background: var(--color-surface-0);
+    border-radius: var(--radius-lg);
+    padding: 2rem 1.75rem 1.75rem;
+    box-shadow: var(--shadow-md);
+    position: relative;
+    transition: transform var(--transition), box-shadow var(--transition);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .plan-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-lg);
+  }
+
+  /* ── Card Standar destacada ── */
+  .plan-featured {
+    background: linear-gradient(160deg, var(--color-surface-dark) 0%, var(--color-surface-dark-2) 100%);
     color: white;
-    margin-top: 1rem;
-    /* que el boton esté  en el centro del card */
-    margin-left: 50%;
+    transform: scale(1.04);
+    box-shadow: 0 8px 40px rgba(52, 163, 110, 0.35);
+    z-index: 1;
+  }
+
+  .plan-featured:hover {
+    transform: scale(1.04) translateY(-6px);
+  }
+
+  .plan-popular-tag {
+    position: absolute;
+    top: -14px;
+    left: 50%;
     transform: translateX(-50%);
-
-  }  .btn-adquirir:hover{
-    background-color: rgb(48, 184, 118);
-  }
-
-  .circle-color{
-    padding-right: 0.5rem;
-    color: rgb(52, 163, 110);
-  }
-
-  .circle-uncolor{
-    padding-right: 0.5rem;
-  }
-
-  .standar{
-    background-color: rgb(220, 255, 113);
-  } .standar .btn-adquirir{
-    background-color: rgba(255, 21, 9, 0.812);
-  }.standar .btn-adquirir:hover{
-    background-color: rgba(214, 23, 13, 0.812);
-  }
-
-  .col:hover{
-    transform: scale(1.02);
-    transition: 0.8s;
-  }
-
-  .btn:hover{
+    background: var(--color-primary);
     color: white;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.3rem 1.1rem;
+    border-radius: 20px;
+    white-space: nowrap;
   }
 
-
-/* Soporte OFitec */
-  .fa-headset{
-    font-size: 8rem;
-    margin: 4rem;
+  /* ── Card Premium ── */
+  .plan-premium {
+    border: 2px solid #f0c040;
   }
 
-  .numeros{
-    font-size: 2.5rem;
-    font-weight: bold;
-  }
-  p{
-    font-size: 1.2rem;
-    text-align: left;
+  /* ── Badge de plan ── */
+  .plan-badge {
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--color-primary);
+    margin-bottom: 1rem;
   }
 
+  .featured-badge { color: rgba(255,255,255,0.6); }
+  .premium-badge  { color: #c9a227; }
 
-  @media only screen and (max-width: 600px) {
-  .titulo{
-    font-size: 3rem;
+  /* ── Icono ── */
+  .plan-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: var(--radius-md);
+    background: var(--color-primary-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: var(--color-primary);
+    margin-bottom: 1.2rem;
   }
-  .parrafo{
+
+  .featured-icon { background: rgba(255,255,255,0.12); color: var(--color-primary-light); }
+  .premium-icon  { background: rgba(201,162,39,0.12); color: #c9a227; }
+
+  /* ── Precio ── */
+  .plan-header { margin-bottom: 1.5rem; }
+
+  .plan-price {
+    display: flex;
+    align-items: baseline;
+    gap: 0.3rem;
+    line-height: 1;
+    margin-bottom: 0.25rem;
+  }
+
+  .price-amount {
+    font-size: 2.6rem;
+    font-weight: 800;
+    color: var(--color-text);
+  }
+
+  .plan-featured .price-amount { color: white; }
+
+  .price-period {
     font-size: 1rem;
+    color: var(--color-text-muted);
+    font-weight: 500;
   }
-  .card-plan{
-    margin: 1rem;
+
+  .plan-featured .price-period { color: rgba(255,255,255,0.5); }
+
+  .price-annual {
+    font-size: 0.88rem;
+    color: var(--color-primary);
+    font-weight: 600;
+    margin-bottom: 0.8rem;
   }
-}
+
+  .price-annual span { font-weight: 400; color: var(--color-text-light); }
+  .plan-featured .price-annual span { color: rgba(255,255,255,0.4); }
+
+  .plan-desc {
+    font-size: 0.92rem;
+    color: var(--color-text-muted);
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  .plan-featured .plan-desc { color: rgba(255,255,255,0.65); }
+
+  /* ── Feature list ── */
+  .feature-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.75rem;
+    flex: 1;
+    border-top: 1px solid var(--color-border);
+    padding-top: 1.2rem;
+  }
+
+  .plan-featured .feature-list { border-top-color: rgba(255,255,255,0.1); }
+
+  .feature-item {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 0.93rem;
+    padding: 0.45rem 0;
+    border-bottom: 1px solid var(--color-surface-100);
+  }
+
+  .plan-featured .feature-item {
+    border-bottom-color: rgba(255,255,255,0.07);
+    color: rgba(255,255,255,0.85);
+  }
+
+  .feature-item:last-child { border-bottom: none; }
+
+  .feature-item.active i {
+    color: var(--color-primary);
+    font-size: 0.85rem;
+    width: 16px;
+    flex-shrink: 0;
+  }
+
+  .feature-item.inactive {
+    opacity: 0.35;
+    text-decoration: line-through;
+  }
+
+  .feature-item.inactive i {
+    color: var(--color-text-muted);
+    font-size: 0.85rem;
+    width: 16px;
+    flex-shrink: 0;
+  }
+
+  /* ── Botones plan ── */
+  .btn-plan {
+    display: block;
+    text-align: center;
+    padding: 0.75rem 1rem;
+    border-radius: var(--radius-sm);
+    font-weight: 700;
+    font-size: 0.97rem;
+    text-decoration: none;
+    background: var(--color-primary-light);
+    color: white;
+    transition: background var(--transition), transform var(--transition);
+  }
+
+  .btn-plan:hover {
+    background: var(--color-primary);
+    color: white;
+    transform: translateY(-2px);
+  }
+
+  .btn-plan-featured {
+    background: var(--color-primary);
+    box-shadow: 0 4px 16px rgba(52, 163, 110, 0.4);
+  }
+
+  .btn-plan-featured:hover { background: var(--color-primary-hover); }
+
+  .btn-plan-premium { background: #c9a227; }
+  .btn-plan-premium:hover { background: #b08f20; }
+
+  /* ── Nota al pie ── */
+  .planes-nota {
+    margin-top: 2.5rem;
+    text-align: center;
+    font-size: 0.92rem;
+    color: var(--color-text-muted);
+  }
+
+  .planes-nota i { color: var(--color-primary); margin-right: 0.3rem; }
+
+  .planes-nota a {
+    color: var(--color-primary);
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .planes-nota a:hover { text-decoration: underline; }
+
+  /* ── Soporte stats ── */
+  .soporte-icon {
+    text-align: center;
+    font-size: 5rem;
+    color: var(--color-primary-light);
+    margin-bottom: 2.5rem;
+    opacity: 0.85;
+  }
+
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+  }
+
+  .stat-card {
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: var(--radius-md);
+    padding: 1.75rem 1rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    transition: background var(--transition);
+  }
+
+  .stat-card:hover { background: rgba(255,255,255,0.12); }
+
+  .stat-number {
+    font-size: 2.4rem;
+    font-weight: 800;
+    color: var(--color-primary-light);
+    line-height: 1;
+  }
+
+  .stat-label {
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.65);
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 900px) {
+    .planes-grid {
+      grid-template-columns: 1fr;
+      max-width: 420px;
+      margin: 0 auto;
+    }
+
+    .plan-featured {
+      transform: none;
+    }
+
+    .plan-featured:hover {
+      transform: translateY(-6px);
+    }
+
+    .stats-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 600px) {
+    .stats-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+
+    .stat-number { font-size: 2rem; }
+  }
 </style>
