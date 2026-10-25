@@ -7,7 +7,7 @@ const whatsappLink = (message: string) =>
   `https://api.whatsapp.com/send?phone=${WHATSAPP_NUMBER}&text=${encodeURIComponent(message)}`;
 ---
 
-<Layout title="Planes y Precios" description="Conoce los planes anuales y semestrales de Ofitec: Básico, Estándar y Premium. Desde S/ 420 por 12 meses o S/ 240 por 6 meses.">
+<Layout title="Planes y Precios" description="Conoce los planes anuales y semestrales de Ofitec: Básico, Estándar y Premium. Desde S/ 420 por 12 meses o S/ 250 por 6 meses.">
 
   <!-- ══ HERO ══ -->
   <Hero background_image="/planes.jpg">
@@ -40,7 +40,7 @@ const whatsappLink = (message: string) =>
       <div class="planes-grid">
 
         <!-- Plan Básico -->
-        <div class="plan-card" data-plan="Básico" data-annual-price="420" data-semiannual-price="240">
+        <div class="plan-card" data-plan="Básico" data-annual-price="420" data-semiannual-price="250">
           <div class="plan-badge">Básico</div>
           <div class="plan-header">
             <div class="plan-icon"><i class="fa-solid fa-seedling"></i></div>
@@ -51,6 +51,7 @@ const whatsappLink = (message: string) =>
             <p class="plan-desc">El plan que te ayuda a crecer y organizar mejor tu negocio</p>
           </div>
           <ul class="feature-list">
+            <li class="feature-item active"><i class="fa-solid fa-check"></i> Dashboard</li>
             <li class="feature-item active"><i class="fa-solid fa-check"></i> Ventas</li>
             <li class="feature-item active"><i class="fa-solid fa-check"></i> Compras</li>
             <li class="feature-item active"><i class="fa-solid fa-check"></i> POS</li>
@@ -72,7 +73,7 @@ const whatsappLink = (message: string) =>
         </div>
 
         <!-- Plan Standar — destacado -->
-        <div class="plan-card plan-featured" data-plan="Estándar" data-annual-price="780" data-semiannual-price="420">
+        <div class="plan-card plan-featured" data-plan="Estándar" data-annual-price="780" data-semiannual-price="440">
           <div class="plan-popular-tag">Más popular</div>
           <div class="plan-badge featured-badge">Estándar</div>
           <div class="plan-header">
@@ -84,6 +85,7 @@ const whatsappLink = (message: string) =>
             <p class="plan-desc">Automatiza tu negocio y controla todas tus actividades</p>
           </div>
           <ul class="feature-list">
+            <li class="feature-item active"><i class="fa-solid fa-check"></i> Dashboard</li>
             <li class="feature-item active"><i class="fa-solid fa-check"></i> Ventas</li>
             <li class="feature-item active"><i class="fa-solid fa-check"></i> Compras</li>
             <li class="feature-item active"><i class="fa-solid fa-check"></i> POS</li>
@@ -105,7 +107,7 @@ const whatsappLink = (message: string) =>
         </div>
 
         <!-- Plan Premium -->
-        <div class="plan-card plan-premium" data-plan="Premium" data-annual-price="1260" data-semiannual-price="600">
+        <div class="plan-card plan-premium" data-plan="Premium" data-annual-price="1260" data-semiannual-price="690">
           <div class="plan-badge premium-badge">Premium</div>
           <div class="plan-header">
             <div class="plan-icon premium-icon"><i class="fa-solid fa-crown"></i></div>
@@ -116,6 +118,7 @@ const whatsappLink = (message: string) =>
             <p class="plan-desc">Una solución de gestión comercial con herramientas avanzadas para negocios que buscan mayor control de sus operaciones.</p>
           </div>
           <ul class="feature-list">
+            <li class="feature-item active"><i class="fa-solid fa-check"></i> Dashboard</li>
             <li class="feature-item active"><i class="fa-solid fa-check"></i> Ventas</li>
             <li class="feature-item active"><i class="fa-solid fa-check"></i> Compras</li>
             <li class="feature-item active"><i class="fa-solid fa-check"></i> POS</li>
@@ -591,7 +594,7 @@ const whatsappLink = (message: string) =>
 
     .feature-list {
       display: grid;
-      grid-template-rows: repeat(14, 1fr);
+      grid-template-rows: repeat(15, 1fr);
     }
 
     .plan-featured { transform: none; }
