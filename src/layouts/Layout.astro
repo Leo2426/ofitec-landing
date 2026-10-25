@@ -14,6 +14,49 @@ const {
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, "https://ofitec.netlify.app");
+const isProductsPage = Astro.url.pathname.replace(/\/+$/, "") === "/productos";
+const softwareApplication = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  name: "Ofitec",
+  applicationCategory: "BusinessApplication",
+  description: "Sistema de Facturación Electrónica para negocios y emprendimientos en Perú",
+  url: "https://ofitec.netlify.app",
+  operatingSystem: "Web, Android",
+  ...(isProductsPage ? {
+    offers: {
+      "@type": "AggregateOffer",
+      priceCurrency: "PEN",
+      lowPrice: "420",
+      highPrice: "1260",
+      offerCount: 3,
+      offers: [
+        { name: "Básico", price: "420" },
+        { name: "Estándar", price: "780" },
+        { name: "Premium", price: "1260" },
+      ].map(({ name, price }) => ({
+        "@type": "Offer",
+        name: `Plan ${name} anual`,
+        price,
+        priceCurrency: "PEN",
+        priceSpecification: {
+          "@type": "UnitPriceSpecification",
+          price,
+          priceCurrency: "PEN",
+          billingDuration: "P1Y",
+          billingIncrement: 1,
+          unitCode: "ANN",
+          unitText: "año",
+        },
+      })),
+    },
+  } : {}),
+  provider: {
+    "@type": "Organization",
+    name: "Ofitec",
+    url: "https://ofitec.netlify.app",
+  },
+};
 ---
 <!DOCTYPE html>
 <html lang="esp">
@@ -55,28 +98,7 @@ const canonicalURL = new URL(Astro.url.pathname, "https://ofitec.netlify.app");
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v6.0.0-beta3/css/all.css">
 
     <!-- Schema.org JSON-LD -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "SoftwareApplication",
-      "name": "Ofitec",
-      "applicationCategory": "BusinessApplication",
-      "description": "Sistema de Facturación Electrónica para negocios y emprendimientos en Perú",
-      "url": "https://ofitec.netlify.app",
-      "operatingSystem": "Web, Android",
-      "offers": {
-        "@type": "AggregateOffer",
-        "priceCurrency": "PEN",
-        "lowPrice": "50",
-        "highPrice": "120"
-      },
-      "provider": {
-        "@type": "Organization",
-        "name": "Ofitec",
-        "url": "https://ofitec.netlify.app"
-      }
-    }
-    </script>
+    <script type="application/ld+json" set:html={JSON.stringify(softwareApplication)} />
   </head>
   <body>
     <Navbar/>
