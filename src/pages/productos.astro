@@ -7,7 +7,7 @@ const whatsappLink = (message: string) =>
   `https://api.whatsapp.com/send?phone=${WHATSAPP_NUMBER}&text=${encodeURIComponent(message)}`;
 ---
 
-<Layout title="Planes y Precios" description="Conoce los planes anuales de Ofitec: Básico, Estándar y Premium. Facturación electrónica desde S/ 420 al año. Elige el plan que se adapta a tu negocio.">
+<Layout title="Planes y Precios" description="Conoce los planes anuales y semestrales de Ofitec: Básico, Estándar y Premium. Desde S/ 420 por 12 meses o S/ 240 por 6 meses.">
 
   <!-- ══ HERO ══ -->
   <Hero background_image="/planes.jpg">
@@ -20,21 +20,33 @@ const whatsappLink = (message: string) =>
     <div class="o-wrapper">
       <div class="o-section-header">
         <span class="o-section-header__eyebrow">Precios</span>
-        <h2 class="o-section-header__title">Planes anuales para tu negocio</h2>
+        <h2 class="o-section-header__title" id="planes-title">Planes anuales para tu negocio</h2>
         <div class="o-section-header__divider"></div>
         <p class="o-section-header__subtitle">Elige el plan que mejor se adapte a tu negocio. Comienza a facturar electrónicamente y lleva un mejor control de tus operaciones.</p>
       </div>
 
+      <fieldset class="period-selector" hidden>
+        <legend class="visually-hidden">Periodo de contratación</legend>
+        <label class="period-selector__option">
+          <input type="radio" name="plan-period" value="annual" checked>
+          <span>Anual</span>
+        </label>
+        <label class="period-selector__option">
+          <input type="radio" name="plan-period" value="semiannual">
+          <span>Semestral</span>
+        </label>
+      </fieldset>
+
       <div class="planes-grid">
 
         <!-- Plan Básico -->
-        <div class="plan-card">
+        <div class="plan-card" data-plan="Básico" data-annual-price="420" data-semiannual-price="240">
           <div class="plan-badge">Básico</div>
           <div class="plan-header">
             <div class="plan-icon"><i class="fa-solid fa-seedling"></i></div>
-            <div class="plan-price">
+            <div class="plan-price" aria-live="polite" aria-atomic="true">
               <span class="price-amount">S/ 420</span>
-              <span class="price-period">al año</span>
+              <span class="price-period">por 12 meses</span>
             </div>
             <p class="plan-desc">El plan que te ayuda a crecer y organizar mejor tu negocio</p>
           </div>
@@ -60,14 +72,14 @@ const whatsappLink = (message: string) =>
         </div>
 
         <!-- Plan Standar — destacado -->
-        <div class="plan-card plan-featured">
+        <div class="plan-card plan-featured" data-plan="Estándar" data-annual-price="780" data-semiannual-price="420">
           <div class="plan-popular-tag">Más popular</div>
           <div class="plan-badge featured-badge">Estándar</div>
           <div class="plan-header">
             <div class="plan-icon featured-icon"><i class="fa-solid fa-rocket"></i></div>
-            <div class="plan-price">
+            <div class="plan-price" aria-live="polite" aria-atomic="true">
               <span class="price-amount">S/ 780</span>
-              <span class="price-period">al año</span>
+              <span class="price-period">por 12 meses</span>
             </div>
             <p class="plan-desc">Automatiza tu negocio y controla todas tus actividades</p>
           </div>
@@ -93,13 +105,13 @@ const whatsappLink = (message: string) =>
         </div>
 
         <!-- Plan Premium -->
-        <div class="plan-card plan-premium">
+        <div class="plan-card plan-premium" data-plan="Premium" data-annual-price="1260" data-semiannual-price="600">
           <div class="plan-badge premium-badge">Premium</div>
           <div class="plan-header">
             <div class="plan-icon premium-icon"><i class="fa-solid fa-crown"></i></div>
-            <div class="plan-price">
+            <div class="plan-price" aria-live="polite" aria-atomic="true">
               <span class="price-amount">S/ 1,260</span>
-              <span class="price-period">al año</span>
+              <span class="price-period">por 12 meses</span>
             </div>
             <p class="plan-desc">Una solución de gestión comercial con herramientas avanzadas para negocios que buscan mayor control de sus operaciones.</p>
           </div>
@@ -177,7 +189,85 @@ const whatsappLink = (message: string) =>
 
 </Layout>
 
+<script>
+  const selector = document.querySelector<HTMLFieldSetElement>('.period-selector');
+  const cards = document.querySelectorAll<HTMLElement>('.plan-card[data-plan]');
+  const title = document.getElementById('planes-title');
+  const formatter = new Intl.NumberFormat('en-US');
+
+  selector?.addEventListener('change', () => {
+    const annual = selector.querySelector<HTMLInputElement>('input:checked')?.value === 'annual';
+    if (title) title.textContent = `Planes ${annual ? 'anuales' : 'semestrales'} para tu negocio`;
+
+    cards.forEach(card => {
+      const amount = card.querySelector<HTMLElement>('.price-amount');
+      const period = card.querySelector<HTMLElement>('.price-period');
+      const link = card.querySelector<HTMLAnchorElement>('.btn-plan');
+      const price = Number(annual ? card.dataset.annualPrice : card.dataset.semiannualPrice);
+      if (!amount || !period || !link) return;
+
+      const formattedPrice = `S/ ${formatter.format(price)}`;
+      amount.textContent = formattedPrice;
+      period.textContent = annual ? 'por 12 meses' : 'por 6 meses';
+      const url = new URL(link.href);
+      url.searchParams.set('text', `Hola, estoy interesado en el plan ${card.dataset.plan} de ${formattedPrice} ${annual ? 'anuales' : 'semestrales'}. ¿Podrían brindarme información y una demostración del sistema?`);
+      link.href = url.toString();
+
+      if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        amount.animate(
+          [{ opacity: 0.5, transform: 'translateY(3px)' }, { opacity: 1, transform: 'translateY(0)' }],
+          { duration: 180, easing: 'ease-out' }
+        );
+      }
+    });
+  });
+
+  if (selector) selector.hidden = false;
+</script>
+
 <style>
+  .period-selector {
+    display: flex;
+    justify-content: center;
+    gap: 0.25rem;
+    width: fit-content;
+    max-width: 100%;
+    margin: 0 auto 3rem;
+    padding: 0.3rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    background: var(--color-surface-0);
+  }
+
+  .period-selector[hidden] { display: none; }
+  .period-selector__option { position: relative; cursor: pointer; }
+  .period-selector__option input {
+    position: absolute;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+  }
+  .period-selector__option span {
+    display: block;
+    padding: 0.7rem 1.4rem;
+    border-radius: var(--radius-sm);
+    color: var(--color-text-muted);
+    font-weight: 600;
+    transition: background var(--transition), color var(--transition);
+  }
+  .period-selector__option input:checked + span {
+    background: var(--color-primary);
+    color: #fff;
+  }
+  .period-selector__option input:focus-visible + span {
+    outline: 2px solid var(--color-text);
+    outline-offset: 3px;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .period-selector__option span { transition: none; }
+  }
+
   /* ── Hero ── */
   .hero-badge {
     display: inline-flex;
