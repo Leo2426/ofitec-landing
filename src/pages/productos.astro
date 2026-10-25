@@ -2,14 +2,17 @@
 import Layout from "../layouts/Layout.astro"
 import { WHATSAPP_NUMBER } from "../config/constants";
 import Hero from "../components/Hero.astro";
+
+const whatsappLink = (message: string) =>
+  `https://api.whatsapp.com/send?phone=${WHATSAPP_NUMBER}&text=${encodeURIComponent(message)}`;
 ---
 
-<Layout title="Planes y Precios" description="Conoce los planes de Ofitec: Básico, Standar y Premium. Facturación electrónica desde S/. 50 al mes. Elige el plan que se adapta a tu negocio.">
+<Layout title="Planes y Precios" description="Conoce los planes anuales de Ofitec: Básico, Estándar y Premium. Facturación electrónica desde S/ 420 al año. Elige el plan que se adapta a tu negocio.">
 
   <!-- ══ HERO ══ -->
   <Hero background_image="/planes.jpg">
     <h1 class="hero-title">Planes que se adaptan<br>a tu medida</h1>
-    <p class="hero-sub">Revisa nuestros planes y elige el que más se adecúe a tu negocio. Son escalables sin costo adicional.</p>
+    <p class="hero-sub">Planes que se adaptan a las necesidades de tu negocio.</p>
   </Hero>
 
   <!-- ══ PLANES ══ -->
@@ -17,9 +20,9 @@ import Hero from "../components/Hero.astro";
     <div class="o-wrapper">
       <div class="o-section-header">
         <span class="o-section-header__eyebrow">Precios</span>
-        <h2 class="o-section-header__title">Planes</h2>
+        <h2 class="o-section-header__title">Planes anuales para tu negocio</h2>
         <div class="o-section-header__divider"></div>
-        <p class="o-section-header__subtitle">Elige el plan ideal para tu negocio. Sin permanencia, cancela cuando quieras.</p>
+        <p class="o-section-header__subtitle">Elige el plan que mejor se adapte a tu negocio. Comienza a facturar electrónicamente y lleva un mejor control de tus operaciones.</p>
       </div>
 
       <div class="planes-grid">
@@ -30,10 +33,9 @@ import Hero from "../components/Hero.astro";
           <div class="plan-header">
             <div class="plan-icon"><i class="fa-solid fa-seedling"></i></div>
             <div class="plan-price">
-              <span class="price-amount">S/. 50</span>
-              <span class="price-period">/mes</span>
+              <span class="price-amount">S/ 420</span>
+              <span class="price-period">al año</span>
             </div>
-            <div class="price-annual">S/. 420 <span>/año</span></div>
             <p class="plan-desc">El plan que te ayuda a crecer y organizar mejor tu negocio</p>
           </div>
           <ul class="feature-list">
@@ -52,22 +54,21 @@ import Hero from "../components/Hero.astro";
             <li class="feature-item inactive"><i class="fa-solid fa-xmark"></i> Tienda Virtual</li>
             <li class="feature-item inactive"><i class="fa-solid fa-xmark"></i> Contabilidad</li>
           </ul>
-          <a class="btn-plan" target="_blank" rel="noopener noreferrer" href={`https://api.whatsapp.com/send?phone=${WHATSAPP_NUMBER}&text=Quiero el Plan Básico`}>
-            <i class="fa-brands fa-whatsapp"></i> Lo quiero
+          <a class="btn-plan" target="_blank" rel="noopener noreferrer" href={whatsappLink("Hola, estoy interesado en el plan Básico de S/ 420 anuales. ¿Podrían brindarme información y una demostración del sistema?")}>
+            <i class="fa-brands fa-whatsapp"></i> Consultar este plan
           </a>
         </div>
 
         <!-- Plan Standar — destacado -->
         <div class="plan-card plan-featured">
           <div class="plan-popular-tag">Más popular</div>
-          <div class="plan-badge featured-badge">Standar</div>
+          <div class="plan-badge featured-badge">Estándar</div>
           <div class="plan-header">
             <div class="plan-icon featured-icon"><i class="fa-solid fa-rocket"></i></div>
             <div class="plan-price">
-              <span class="price-amount">S/. 80</span>
-              <span class="price-period">/mes</span>
+              <span class="price-amount">S/ 780</span>
+              <span class="price-period">al año</span>
             </div>
-            <div class="price-annual">S/. 780 <span>/año</span></div>
             <p class="plan-desc">Automatiza tu negocio y controla todas tus actividades</p>
           </div>
           <ul class="feature-list">
@@ -78,16 +79,16 @@ import Hero from "../components/Hero.astro";
             <li class="feature-item active"><i class="fa-solid fa-check"></i> Productos</li>
             <li class="feature-item active"><i class="fa-solid fa-check"></i> 4 usuarios / 3 locales</li>
             <li class="feature-item active"><i class="fa-solid fa-check"></i> 1200 CPE al mes</li>
-            <li class="feature-item active"><i class="fa-solid fa-check"></i> App para Android</li>
             <li class="feature-item active"><i class="fa-solid fa-check"></i> Inventarios</li>
+            <li class="feature-item active"><i class="fa-solid fa-check"></i> App Básico</li>
             <li class="feature-item active"><i class="fa-solid fa-check"></i> Emitir Guías</li>
             <li class="feature-item inactive"><i class="fa-solid fa-xmark"></i> Comprobantes avanzados</li>
             <li class="feature-item inactive"><i class="fa-solid fa-xmark"></i> Finanzas</li>
             <li class="feature-item inactive"><i class="fa-solid fa-xmark"></i> Tienda Virtual</li>
             <li class="feature-item inactive"><i class="fa-solid fa-xmark"></i> Contabilidad</li>
           </ul>
-          <a class="btn-plan btn-plan-featured" target="_blank" rel="noopener noreferrer" href={`https://api.whatsapp.com/send?phone=${WHATSAPP_NUMBER}&text=Quiero el Plan Standar`}>
-            <i class="fa-brands fa-whatsapp"></i> Lo quiero
+          <a class="btn-plan btn-plan-featured" target="_blank" rel="noopener noreferrer" href={whatsappLink("Hola, estoy interesado en el plan Estándar de S/ 780 anuales. ¿Podrían brindarme información y una demostración del sistema?")}>
+            <i class="fa-brands fa-whatsapp"></i> Consultar este plan
           </a>
         </div>
 
@@ -97,11 +98,10 @@ import Hero from "../components/Hero.astro";
           <div class="plan-header">
             <div class="plan-icon premium-icon"><i class="fa-solid fa-crown"></i></div>
             <div class="plan-price">
-              <span class="price-amount">S/. 120</span>
-              <span class="price-period">/mes</span>
+              <span class="price-amount">S/ 1,260</span>
+              <span class="price-period">al año</span>
             </div>
-            <div class="price-annual">S/. 1,260 <span>/año</span></div>
-            <p class="plan-desc">Tu negocio completamente automatizado, sin límites</p>
+            <p class="plan-desc">Una solución de gestión comercial con herramientas avanzadas para negocios que buscan mayor control de sus operaciones.</p>
           </div>
           <ul class="feature-list">
             <li class="feature-item active"><i class="fa-solid fa-check"></i> Ventas</li>
@@ -111,26 +111,31 @@ import Hero from "../components/Hero.astro";
             <li class="feature-item active"><i class="fa-solid fa-check"></i> Productos</li>
             <li class="feature-item active"><i class="fa-solid fa-check"></i> Usuarios y locales ilimitados</li>
             <li class="feature-item active"><i class="fa-solid fa-check"></i> Comprobantes ilimitados</li>
-            <li class="feature-item active"><i class="fa-solid fa-check"></i> App para Android</li>
             <li class="feature-item active"><i class="fa-solid fa-check"></i> Inventarios</li>
+            <li class="feature-item active"><i class="fa-solid fa-check"></i> App Premium</li>
             <li class="feature-item active"><i class="fa-solid fa-check"></i> Emitir Guías</li>
-            <li class="feature-item active"><i class="fa-solid fa-check"></i> Comprobantes avanzados</li>
+            <li class="feature-item active feature-item--highlight"><i class="fa-solid fa-check"></i> Módulos avanzados</li>
             <li class="feature-item active"><i class="fa-solid fa-check"></i> Finanzas</li>
             <li class="feature-item active"><i class="fa-solid fa-check"></i> Tienda Virtual</li>
             <li class="feature-item active"><i class="fa-solid fa-check"></i> Contabilidad</li>
           </ul>
-          <a class="btn-plan btn-plan-premium" target="_blank" rel="noopener noreferrer" href={`https://api.whatsapp.com/send?phone=${WHATSAPP_NUMBER}&text=Quiero el Plan Premium`}>
-            <i class="fa-brands fa-whatsapp"></i> Lo quiero
+          <a class="btn-plan btn-plan-premium" target="_blank" rel="noopener noreferrer" href={whatsappLink("Hola, estoy interesado en el plan Premium de S/ 1,260 anuales. ¿Podrían brindarme información y una demostración del sistema?")}>
+            <i class="fa-brands fa-whatsapp"></i> Consultar este plan
           </a>
         </div>
 
       </div>
 
+      <p class="planes-nota">
+        ¿Prefieres pagar mensualmente? También contamos con esa modalidad.
+        <a href={whatsappLink("Hola, quisiera conocer las opciones de contratación mensual del sistema OFITEC.")} target="_blank" rel="noopener noreferrer">Escríbenos para conocer las opciones disponibles.</a>
+      </p>
+
       <!-- Nota al pie -->
       <div class="planes-nota">
         <i class="fa-solid fa-circle-info"></i>
         Todos los planes incluyen soporte técnico y actualizaciones. ¿Tienes dudas?
-        <a href={`https://api.whatsapp.com/send?phone=${WHATSAPP_NUMBER}&text=Tengo una consulta sobre los planes`} target="_blank" rel="noopener noreferrer">Escríbenos</a>.
+        <a href={whatsappLink("Tengo una consulta sobre los planes")} target="_blank" rel="noopener noreferrer">Escríbenos</a>.
       </div>
     </div>
   </section>
@@ -301,6 +306,7 @@ import Hero from "../components/Hero.astro";
 
   .plan-price {
     display: flex;
+    flex-wrap: wrap;
     align-items: baseline;
     gap: 0.3rem;
     line-height: 1;
@@ -308,7 +314,7 @@ import Hero from "../components/Hero.astro";
   }
 
   .price-amount {
-    font-size: 2.6rem;
+    font-size: clamp(2rem, 3.5vw, 2.6rem);
     font-weight: 800;
     color: var(--color-text);
   }
@@ -319,19 +325,17 @@ import Hero from "../components/Hero.astro";
     font-size: 1rem;
     color: var(--color-text-muted);
     font-weight: 500;
+    white-space: nowrap;
   }
 
-  .plan-featured .price-period { color: rgba(255,255,255,0.5); }
+  .plan-featured .price-period { color: rgba(255,255,255,0.75); }
 
-  .price-annual {
-    font-size: 0.88rem;
-    color: var(--color-primary);
-    font-weight: 600;
-    margin-bottom: 0.8rem;
+  .feature-item.feature-item--highlight {
+    background: rgba(201,162,39,0.12);
+    border-radius: var(--radius-sm);
+    padding-inline: 0.6rem;
+    font-weight: 700;
   }
-
-  .price-annual span { font-weight: 400; color: var(--color-text-light); }
-  .plan-featured .price-annual span { color: rgba(255,255,255,0.4); }
 
   .plan-desc {
     font-size: 0.92rem;
@@ -479,6 +483,31 @@ import Hero from "../components/Hero.astro";
   }
 
   /* ── Responsive ── */
+  @media (min-width: 901px) {
+    .planes-grid {
+      align-items: stretch;
+      row-gap: 0;
+    }
+
+    .plan-card {
+      display: grid;
+      grid-template-rows: subgrid;
+      grid-row: span 4;
+      row-gap: 0;
+      border: 2px solid transparent;
+    }
+
+    .plan-premium { border-color: #f0c040; }
+
+    .feature-list {
+      display: grid;
+      grid-template-rows: repeat(14, 1fr);
+    }
+
+    .plan-featured { transform: none; }
+    .plan-featured:hover { transform: translateY(-6px); }
+  }
+
   @media (max-width: 900px) {
     .planes-grid {
       grid-template-columns: 1fr;
