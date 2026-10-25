@@ -27,16 +27,16 @@ const softwareApplication = {
     offers: {
       "@type": "AggregateOffer",
       priceCurrency: "PEN",
-      lowPrice: "240",
+      lowPrice: "250",
       highPrice: "1260",
       offerCount: 6,
       offers: [
         { name: "Básico", price: "420", annual: true },
         { name: "Estándar", price: "780", annual: true },
         { name: "Premium", price: "1260", annual: true },
-        { name: "Básico", price: "240", annual: false },
-        { name: "Estándar", price: "420", annual: false },
-        { name: "Premium", price: "600", annual: false },
+        { name: "Básico", price: "250", annual: false },
+        { name: "Estándar", price: "440", annual: false },
+        { name: "Premium", price: "690", annual: false },
       ].map(({ name, price, annual }) => ({
         "@type": "Offer",
         name: `Plan ${name} ${annual ? 'anual' : 'semestral'}`,
